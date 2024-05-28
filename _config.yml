@@ -1,4 +1,4 @@
-title: HQI - Documentation
+title: "HQI - Documentation"
 author: GENCI
 logo: image/logo.jpg
 url: "www.hqi.fr"
@@ -7,11 +7,15 @@ copyright: "2024"
 execute:
   execute_notebooks: force
 
-repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+#repository:
+#  url: https://hqi-france.github.io/Tutoriel/  # Online location of your book
+#  path_to_book: docs  # Optional path to your book, relative to the repository root
+#  branch: master  # Which branch of the repository should be used when creating links (optional)
 
 html:
-  use_issues_button: true
-  use_repository_button: true
+  use_repository_button: false
+  #announcement: '⚠️Cette documentation est encore en cours de construction⚠️'
+  favicon: image/logo.ico
+  home_page_in_navbar: true
+  use_issues_button: false
+  baseurl: https://hqi.fr/

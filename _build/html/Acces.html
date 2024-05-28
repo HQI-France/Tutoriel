@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Création d’un compte DARI &#8212; HQI - Documentation</title>
+    <title>Création du compte DARI &#8212; HQI - Documentation</title>
   
   
   
@@ -58,10 +58,12 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Acces';</script>
+    <link rel="canonical" href="https://hqi.fr/Acces.html" />
+    <link rel="icon" href="_static/logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Qbricks" href="qbricks.html" />
-    <link rel="prev" title="Accéder aux ressources de calcul quantique du programme HQI" href="intro.html" />
+    <link rel="next" title="Pulser" href="pulser.html" />
+    <link rel="prev" title="Ressources de calcul quantique" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,14 +174,22 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Accéder aux ressources de calcul quantique du programme HQI
+                    Ressources de calcul quantique
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Création d’un compte DARI</a></li>
-
-
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Accès</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Création du compte DARI</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Environnements</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pulser.html">Pulser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perceval.html">Perceval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="myqlm.html">MyQLM</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Outils</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="qbricks.html">Qbricks</a></li>
 </ul>
 
@@ -222,53 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAcces.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -366,7 +329,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Création d’un compte DARI</h1>
+    <h1>Création du compte DARI</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,22 +339,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Création d’un compte DARI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendez-vous-sur-www-edari-fr">Rendez-vous sur www.edari.fr</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#une-fois-les-acces-recu">Une fois les accès reçu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-des-modules-appropries">Chargement des modules appropriés</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendez-vous-sur-www-edari-fr">Rendez-vous sur www.edari.fr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acces-a-la-plateforme-via-ssh">Accés à la plateforme via ssh</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-des-modules">Chargement des modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demarrer-une-session-de-visualisation">Démarrer une session de visualisation</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-au-ressource-de-calcul-quantique-du-programme-hqi">Accéder au ressource de calcul quantique du programme HQI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-plateforme-de-calcul-quantique">La plateforme de calcul quantique</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-d-acces-via-le-dari-demande-d-attribution-de-ressources-informatiques">Procédure d’accès via le DARI (Demande d’Attribution de Ressources Informatiques)</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -402,8 +356,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="creation-d-un-compte-dari">
-<h1>Création d’un compte DARI<a class="headerlink" href="#creation-d-un-compte-dari" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="creation-du-compte-dari">
+<h1>Création du compte DARI<a class="headerlink" href="#creation-du-compte-dari" title="Link to this heading">#</a></h1>
 <section id="rendez-vous-sur-www-edari-fr">
 <h2>Rendez-vous sur <a class="reference external" href="http://www.edari.fr">www.edari.fr</a><a class="headerlink" href="#rendez-vous-sur-www-edari-fr" title="Link to this heading">#</a></h2>
 <p><img alt="image.png" src="_images/dari1.png" /></p>
@@ -414,41 +368,33 @@ document.write(`
 <p><img alt="image.png" src="_images/dari5.png" /></p>
 <p>Puis cocher vos logiciels parmi ceux disponible et vos besoins</p>
 <p>Une fois la procédure terminé et l’accès au TGCC accordé, suivez les instructions reçu par mail pour vous connecter.</p>
-<section id="une-fois-les-acces-recu">
-<h3>Une fois les accès reçu<a class="headerlink" href="#une-fois-les-acces-recu" title="Link to this heading">#</a></h3>
-<p>Dans un terminal :</p>
+</section>
+<section id="acces-a-la-plateforme-via-ssh">
+<h2>Accés à la plateforme via ssh<a class="headerlink" href="#acces-a-la-plateforme-via-ssh" title="Link to this heading">#</a></h2>
+<p>Une fois les identifiants de connexion reçu par mail, ouvrez un terminal :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">login</span><span class="o">&gt;</span><span class="nd">@irene</span><span class="o">-</span><span class="n">eu</span><span class="o">.</span><span class="n">ccc</span><span class="o">.</span><span class="n">cea</span><span class="o">.</span><span class="n">fr</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">ssh</span> <span class="o">&lt;</span><span class="n">login</span><span class="o">&gt;</span><span class="nd">@irene</span><span class="o">-</span><span class="n">eu</span><span class="o">.</span><span class="n">ccc</span><span class="o">.</span><span class="n">cea</span><span class="o">.</span><span class="n">fr</span>
-               <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ssh &lt;login&gt;@irene-eu.ccc.cea.fr</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>puis rentrer votre mot de passe comme indiqué dans le mail, et suivez la procédure de changement de mot de passe</p>
-</section>
-<section id="chargement-des-modules-appropries">
-<h3>Chargement des modules appropriés<a class="headerlink" href="#chargement-des-modules-appropries" title="Link to this heading">#</a></h3>
-<p>Une fois connecté au noaud frontale</p>
+<section id="chargement-des-modules">
+<h3>Chargement des modules<a class="headerlink" href="#chargement-des-modules" title="Link to this heading">#</a></h3>
+<p>Une fois connecté au noaud frontal</p>
 <p><img alt="irene1.png" src="_images/irene1.png" /></p>
 <p>Charger les modules nécessaire</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">python3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#module load python3</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">myqlm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#module load myqlm</span>
 </pre></div>
 </div>
 </div>
@@ -458,27 +404,15 @@ document.write(`
 <h3>Démarrer une session de visualisation<a class="headerlink" href="#demarrer-une-session-de-visualisation" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ccc_visu</span> <span class="n">virtual</span> <span class="o">-</span><span class="n">p</span> <span class="n">hybrid</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ccc_visu virtual -p hybrid</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Copiez le lien en sortie et collez le dans votre navigateur, puis accédez à votre session de visualisation</p>
+<p>(Pour cette partie du tutoriel, qui fait doublon à celui du TGCC, s’assurez de la non-confidentialité des commandes/infos ?)</p>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="acceder-au-ressource-de-calcul-quantique-du-programme-hqi">
-<h1>Accéder au ressource de calcul quantique du programme HQI<a class="headerlink" href="#acceder-au-ressource-de-calcul-quantique-du-programme-hqi" title="Link to this heading">#</a></h1>
-<p>L’un des volets du programme HQI (France Hybrid Quantum Initiative) est la mise à disposition d’une plateforme de calcul hybride, interconnectant systèmes de calcul classiques et dispositifs quantiques, vus alors comme des accélérateurs. Elle sera mise à disposition d’une communauté internationale regroupant des laboratoires, des startups et des industriels. L’objectif ? Faciliter leur accès aux capacités de calcul quantique, afin d’être en mesure d’identifier, de développer et de tester de nouveaux cas d’usages.</p>
-<section id="la-plateforme-de-calcul-quantique">
-<h2>La plateforme de calcul quantique<a class="headerlink" href="#la-plateforme-de-calcul-quantique" title="Link to this heading">#</a></h2>
-<p>Piloté par GENCI (Grand Equipement National de Calcul Intensif), Infrastructure de recherche IR*, l’acquisition de simulateurs et calculateurs quantiques met déjà à disposition du grand public un accès à la pile logicielle du TGCC (Très Grand centre de Calcul du CEA).</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="procedure-d-acces-via-le-dari-demande-d-attribution-de-ressources-informatiques">
-<h1>Procédure d’accès via le DARI (Demande d’Attribution de Ressources Informatiques)<a class="headerlink" href="#procedure-d-acces-via-le-dari-demande-d-attribution-de-ressources-informatiques" title="Link to this heading">#</a></h1>
-<p>Afin de bénéficier de la puissance de calcul quantique du programme HQI, il est nécessaire de se créer un compte via la plateforme DARI sur <a class="reference external" href="http://www.edari.fr">www.edari.fr</a></p>
-<p>une fois le compte créé, selon vos besoins, vous devez demander un accès Dynamique ou Régulier (on privilégiera l’accès Dynamique pour les petits projets).
-Une fois toute la procédure complété.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -517,15 +451,15 @@ Une fois toute la procédure complété.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Accéder aux ressources de calcul quantique du programme HQI</p>
+        <p class="prev-next-title">Ressources de calcul quantique</p>
       </div>
     </a>
     <a class="right-next"
-       href="qbricks.html"
+       href="pulser.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Qbricks</p>
+        <p class="prev-next-title">Pulser</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,22 +479,13 @@ Une fois toute la procédure complété.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Création d’un compte DARI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendez-vous-sur-www-edari-fr">Rendez-vous sur www.edari.fr</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#une-fois-les-acces-recu">Une fois les accès reçu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-des-modules-appropries">Chargement des modules appropriés</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendez-vous-sur-www-edari-fr">Rendez-vous sur www.edari.fr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acces-a-la-plateforme-via-ssh">Accés à la plateforme via ssh</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-des-modules">Chargement des modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demarrer-une-session-de-visualisation">Démarrer une session de visualisation</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-au-ressource-de-calcul-quantique-du-programme-hqi">Accéder au ressource de calcul quantique du programme HQI</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-plateforme-de-calcul-quantique">La plateforme de calcul quantique</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-d-acces-via-le-dari-demande-d-attribution-de-ressources-informatiques">Procédure d’accès via le DARI (Demande d’Attribution de Ressources Informatiques)</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

@@ -1,5 +1,19 @@
+# _toc.yml
+
 format: jb-book
 root: intro
-chapters:
-- file: Acces
-- file: qbricks
+
+parts:
+  - caption: Accès
+    chapters:
+      - file: Acces
+
+  - caption: Environnements
+    chapters:
+      - file: pulser
+      - file: perceval
+      - file: myqlm
+
+  - caption: Outils
+    chapters:
+      - file: qbricks
