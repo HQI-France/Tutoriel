@@ -1,0 +1,20 @@
+format: jb-book
+root: intro
+
+parts:
+  - caption: Accès
+    chapters:
+      - file: edari
+
+  - caption: Environnements
+    chapters:
+      - file: myqlm
+      - file: pulser
+      - file: perceval
+
+  - caption: Outils
+    chapters:
+      - file: qbricks
+      - file: qimaera
+      - file: publications
+      #- file: commande

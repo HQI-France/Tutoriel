@@ -1,0 +1,29 @@
+title: "HQI"
+author: GENCI
+logo: image/logo.jpg
+url: "www.hqi.fr"
+copyright: "2024 GENCI - All rights reserved"
+
+execute:
+  execute_notebooks: 'off'
+
+#repository:
+#  url: https://hqi-france.github.io/Tutoriel/  # Online location of your book
+#  path_to_book: docs  # Optional path to your book, relative to the repository root
+#  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+html:
+  use_repository_button: False
+  #announcement: '⚠️Cette documentation est encore en cours de construction⚠️'
+  favicon: image/logo.ico
+  home_page_in_navbar: True
+  use_issues_button: False
+  baseurl: https://hqi.fr/
+
+
+launch_buttons:
+  jupyterhub_url: "https://jupyterhub.ijclab.in2p3.fr/"  # The URL for your JupyterHub. (e.g., https://datahub.berkeley.edu)
+
+sphinx:
+  config:
+    language: fr
