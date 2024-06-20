@@ -6,8 +6,37 @@
  La plupart des publications sont référencées sur le portail <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0002&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-R&D Support</a> et <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0001&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-Acquisition</a>. Cependant, certaines publications étant mal référencées, vous trouverez ici les preprints ArXiV.
  ``` 
 
+## Calcul hybride classique/quantique
+
+[A Pragma-Based C Framework for Hybrid Quantum Classical Computation](#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation)
+
+[A tree-approach Pauli decomposition algorithm with application to quantum computing](#a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing)
+
+[Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer](#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer)
+
+[Qimaera: Type-safe (Variational) Quantum Programming in Idris](#qimaera:-type-safe-variational-quantum-programming-in-idris)
+
+[Formal Methods for Quantum Programs: A Survey](#formal-methods-for-quantum-programs-a-survey)
+
+[Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze](#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze)
+
+[Quantum Expectation Transformers for Cost Analysis](#quantum-expectation-transformers-for-cost-analysis)
+
+[Many-body entropies and entanglement from polynomially-many local measurements](#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements)
+
+[Information-theoretic generalization bounds for learning from quantum data](#information-theoretic-generalization-bounds-for-learning-from-quantum-data)
+
+[Provably Efficient Learning of Phases of Matter via Dissipative Evolutions](#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions)
+
+[Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning](#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning)
+
+[Robust sparse IQP sampling in constant depth](#robust-sparse-iqp-sampling-in-constant-depth)
+
+[Sparse Quantum State Preparation for Strongly Correlated Systems](#sparse-quantum-state-preparation-for-strongly-correlated-systems)
+
 ## Algorithme/circuit
 
+(formal-methods-for-quantum-programs-a-survey)=
 ### Formal Methods for Quantum Programs: A Survey
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2109.06493v2)
@@ -271,7 +300,8 @@ quantum circuits (when all gates are unitary) requires rules acting on an
 unbounded number of qubits. Finally, we also simplify the complete equational
 theories for quantum circuits with ancillary qubits and/or qubit discarding.
 
-### A pragma based C++ framework for hybrid quantum/classical computation
+(a-pragma-based-c-framework-for-hybrid-quantum-classical-computation)= 
+### A Pragma-Based C Framework for Hybrid Quantum Classical Computation
 
 **Lien de l'article :** [ArXiv](https://arxiv.org/abs/2309.02605)
 
@@ -284,6 +314,22 @@ theories for quantum circuits with ancillary qubits and/or qubit discarding.
 **Résumé :**
 Quantum computers promise exponential speed ups over classical computers for various tasks. This emerging technology is expected to have its first huge impact in High Performance Computing (HPC), as it can solve problems beyond the reach of HPC. To that end, HPC will require quantum accelerators, which will enable applications to run on both classical and quantum devices, via hybrid quantum-classical nodes. Hybrid quantum-HPC applications should be scalable, executable on Quantum Error Corrected (QEC) devices, and could use quantum-classical primitives. However, the lack of scalability, poor performances, and inability to insert classical schemes within quantum applications has prevented current quantum frameworks from being adopted by the HPC community.
 This paper specifies the requirements of a hybrid quantum-classical framework compatible with HPC environments, and introduces a novel hardware-agnostic framework called Q-Pragma. This framework extends the classical programming language C++ heavily used in HPC via the addition of pragma directives to manage quantum computations. 
+
+(a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing)=
+### A tree-approach Pauli decomposition algorithm with application to quantum computing
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2403.11644)
+
+**Date de publication :** 18/03/2024
+
+**Auteur(s) :**
+- Oceane Koska
+- Marc Baboulin
+- Arnaud Gazda
+
+
+**Résumé :**
+The Pauli matrices are 2-by-2 matrices that are very useful in quantum computing. They can be used as elementary gates in quantum circuits but also to decompose any matrix of ℂ^2^n^×2^n^^ as a linear combination of tensor products of the Pauli matrices. However, the computational cost of this decomposition is potentially very expensive since it can be exponential in n. In this paper, we propose an algorithm with a parallel implementation that optimizes this decomposition using a tree approach to avoid redundancy in the computation while using a limited memory footprint. We also explain how some particular matrix structures can be exploited to reduce the number of operations. We provide numerical experiments to evaluate the sequential and parallel performance of our decomposition algorithm and we illustrate how this algorithm can be applied to encode matrices in a quantum memory. 
+
 
 ## Langage de programmation
 
@@ -307,6 +353,7 @@ class FBQP. Finally, we present a tractable semantics-preserving algorithm
 compiling a PFOQ program to a quantum circuit of size polynomial in the number
 of input qubits.
 
+(quantum-expectation-transformers-for-cost-analysis)=
 ### Quantum Expectation Transformers for Cost Analysis
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2201.09361v1)
@@ -333,6 +380,7 @@ usefulness of our techniques by computing the expected cost of several
 well-known quantum algorithms and protocols, such as coin tossing, repeat until
 success, entangled state preparation, and quantum walks.
 
+(qimaera:-type-safe-variational-quantum-programming-in-idris)=
 ### Qimaera: Type-safe (Variational) Quantum Programming in Idris
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2111.10867v1)
@@ -529,6 +577,7 @@ case setting whereas previous results only applied on average.
 tomography algorithms, Gibbs approximations to ground states, and
 generalisations of transportation cost inequalities for Gibbs states.
 
+(provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions)=
 ### Provably Efficient Learning of Phases of Matter via Dissipative Evolutions
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2311.07506v1)
@@ -568,6 +617,7 @@ also show that we can learn families of states which go beyond the Lindbladian
 definition of phase, and we derive bounds on the sample complexity which are
 dependent on the mixing time between states under a Lindbladian evolution.
 
+(many-body-entropies-and-entanglement-from-polynomially-many-local-measurements)=
 ### Many-body entropies and entanglement from polynomially-many local measurements
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2311.08108v1)
@@ -608,6 +658,7 @@ today's quantum platforms.
 
 ## Chimie
 
+(greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer)=
 ### Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer
 
 **Lien de l'article :** [ArXiv](https://arxiv.org/abs/2306.17159)
@@ -626,6 +677,7 @@ today's quantum platforms.
 **Résumé :**
 Hybrid quantum-classical adaptive Variational Quantum Eigensolvers (VQE) already hold the potential to outperform classical computing for simulating quantum many-body systems. However, their practical implementation on current quantum processing units (QPUs) is very challenging due to the noisy evaluation of a polynomially scaling number of observables, undertaken for operator selection and optimisation of a high-dimensional cost function. To overcome this, we propose new techniques to execute adaptive algorithms on a 25-qubit error-mitigated QPU coupled to a GPU-accelerated HPC simulator. Targeting physics applications, we compute the ground state of a 25-body Ising model using the newly introduced Greedy Gradient-free Adaptive VQE (CGA-VQE) requiring only five circuit measurements per iteration, regardless of the number of qubits and size of the operator pool. Towards chemistry, we combine the GGA-VQE and Overlap-ADAPT-VQE algorithms to approximate a molecular system ground state. We show that the QPU successfully executes the algorithms and yields the correct choice of parametrised unitary operators. While the QPU evaluation of the resulting ansatz wave-function is polluted by hardware noise, a single final evaluation of the sought-after observables on a classical GPU-accelerated/noiseless simulator allows the recovery of the correct approximation of the ground state, thus highlighting the need for hybrid quantum-classical observable measurement.
 
+(overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze)=
 ### Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze
 
 **Lien de l'article :** [ArXiv](https://arxiv.org/abs/2301.10196)
@@ -643,6 +695,7 @@ Hybrid quantum-classical adaptive Variational Quantum Eigensolvers (VQE) already
 **Résumé :**
 ADAPT-VQE is a robust algorithm for hybrid quantum-classical simulations of quantum chemical systems on near-term quantum computers. While its iterative process systematically reaches the ground state energy, ADAPT-VQE is sensitive to local energy minima, leading to over-parameterized ansätze. We introduce the Overlap-ADAPT-VQE to grow wave-functions by maximizing their overlap with any intermediate target wave-function that already captures some electronic correlation. By avoiding building the ansatz in the energy landscape strewn with local minima, the Overlap-ADAPT-VQE produces ultra-compact ansätze suitable for high-accuracy initializations of a new ADAPT procedure. Spectacular advantages over ADAPT-VQE are observed for strongly correlated systems including massive savings in circuit depth. Since this compression strategy can also be initialized with accurate Selected-Configuration Interaction (SCI) classical target wave-functions, it paves the way for chemically accurate simulations of larger systems, and strengthens the promise of decisively surpassing classical quantum chemistry through the power of quantum computing. 
 
+(sparse-quantum-state-preparation-for-strongly-correlated-systems)=
 ### Sparse Quantum State Preparation for Strongly Correlated Systems
 
 **Lien de l'article :** [ArXiv](https://arxiv.org/abs/2311.03347)
@@ -680,6 +733,7 @@ Cooling a quantum system to its ground state is important for the characterizati
 
 ## Machine learning/optimisation
 
+(trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning)=
 ### Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2309.15547v1)
@@ -999,6 +1053,7 @@ single qubit Cliffords. In light of this, our novel approach enables the
 large-scale characterization of Pauli noise in quantum devices under minimal
 experimental requirements and assumptions.
 
+(information-theoretic-generalization-bounds-for-learning-from-quantum-data)=
 ### Information-theoretic generalization bounds for learning from quantum data
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2311.05529v1)
@@ -1063,6 +1118,7 @@ $\Omega(2^{2n}\epsilon^{-2} )$ for any $\epsilon > 0$. This last lower bound
 even applies for arbitrarily many sequential uses of the channel, as long as
 they are only interspersed with other unital operations.
 
+(robust-sparse-iqp-sampling-in-constant-depth)=
 ### Robust sparse IQP sampling in constant depth
 
 **Lien de l'article :** [ArXiv](http://arxiv.org/abs/2307.10729v4)
@@ -1131,28 +1187,32 @@ This approach thereby provides the desired modularity as our sufficient conditio
 **Résumé :**     
 While recent progress in quantum hardware open the door for significant speedup in certain key areas, quantum algorithms are still hard to implement right, and the validation of such quantum programs is a challenge. Early attempts either suffer from the lack of automation or parametrized reasoning, or target high-level abstract algorithm description languages far from the current de facto consensus of circuit-building quantum programming languages. As a consequence, no significant quantum algorithm implementation has been currently verified in a scale-invariant manner. We propose Qbricks, the first formal verification environment for circuit-building quantum programs, featuring clear separation between code and proof, parametric specifications and proofs, high degree of proof automation and allowing to encode quantum programs in a natural way, i.e. close to textbook style. Qbricks builds on best practice of formal verification for the classical case and tailor them to the quantum case: we bring a new domain-specific circuit-building language for quantum programs, namely Qbricks-DSL, together with a new logical specification language Qbricks-Spec and a dedicated Hoare-style deductive verification rule named Hybrid Quantum Hoare Logic. Especially, we introduce and intensively build upon HOPS, a higher-order extension of the recent path-sum symbolic representation, used for both specification and automation. To illustrate the opportunity of Qbricks, we implement the first verified parametric implementations of several famous and non-trivial quantum algorithms, including the quantum part of Shor integer factoring (Order Finding - Shor-OF), quantum phase estimation (QPE) - a basic building block of many quantum algorithms, and Grover search. These breakthroughs were amply facilitated by the specification and automated deduction principles introduced within Qbricks. 
 
-## Calcul hybride
+### FASQuiC: Flexible architecture for scalable spin qubit control
 
-[A pragma based C++ framework for hybrid quantum/classical computation](#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation)
+**Lien de l'article :** [HAL](https://cea.hal.science/cea-04612422)
 
-[Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer](#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer)
+**Date de publication :** 14/06/2024
 
-[Qimaera: Type-safe (Variational) Quantum Programming in Idris](#qimaera:-type-safe-variational-quantum-programming-in-idris)
+**Auteur(s) :**
+- Mathieu Toubeix
+- Eric Guthmuller
+- Adrian Evans
+- Antoine Faurie
+- Tristan Meunier
 
-[Formal Methods for Quantum Programs: A Survey](#formal-methods-for-quantum-programs-a-survey)
-
-[Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze](#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze)
-
-[Quantum Expectation Transformers for Cost Analysis](#quantum-expectation-transformers-for-cost-analysis)
-
-[Many-body entropies and entanglement from polynomially-many local measurements](#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements)
-
-[Information-theoretic generalization bounds for learning from quantum data](#information-theoretic-generalization-bounds-for-learning-from-quantum-data)
-
-[Provably Efficient Learning of Phases of Matter via Dissipative Evolutions](#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions)
-
-[Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning](#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning)
-
-[Robust sparse IQP sampling in constant depth](#robust-sparse-iqp-sampling-in-constant-depth)
-
-[Sparse Quantum State Preparation for Strongly Correlated Systems](#sparse-quantum-state-preparation-for-strongly-correlated-systems)
+**Résumé :**     
+As scaling becomes a key issue for Large Scale Quantum (LSQ) computing, hardware
+control systems will become increasingly costly in resources. This paper presents a compact Direct Digital
+Synthesis (DDS) architecture for signal generation adapted for spin qubits, which is scalable in terms of
+waveform accuracy and the number of synchronized channels. The architecture can produce programmable
+combinations of ramps, frequency combs and Arbitrary Waveform Generation (AWG) at 5 GS/s, with
+a worst-case digital feedback latency of 76.8 ns. The FPGA-based system is highly configurable and
+takes advantage of bitstream switching to achieve the high flexibility required for scalable calibration.
+The architecture also provides GHz rate multiplexed I/Q single-side band (SSB) modulation for scalable
+reflectometry. This architecture has been validated in hardware on a Xilinx ZCU111 FPGA demonstrating
+the mixing of complex signals and the quality of the frequency comb generation for multiplexed control
+and measurement. The key benefits of this design are the increase of controllability of ramps at the Digital
+to Analog Converter (DAC) frequency and the reduction in memory requirements by several orders of
+magnitude compared to existing AWG-based architectures. The hardware for a single channel is very
+compact, 2% of ZCU111 logic resources for one DAC lane in the default configuration, leaving significant
+circuit resources for integrated feedback, calibration and Quantum Error Correction (QEC).
