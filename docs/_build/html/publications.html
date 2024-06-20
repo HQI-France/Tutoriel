@@ -343,6 +343,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-hybride-classique-quantique">Calcul hybride classique/quantique</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme-circuit">Algorithme/circuit</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-methods-for-quantum-programs-a-survey">Formal Methods for Quantum Programs: A Survey</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-hadamard-gate-count-for-clifford-t-synthesis-of-pauli-rotations-sequences">Optimal Hadamard gate count for Clifford<span class="math notranslate nohighlight">\(+T\)</span> synthesis of Pauli rotations sequences</a></li>
@@ -354,7 +355,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-curry-howard-correspondence-for-linear-reversible-computation">A Curry-Howard Correspondence for Linear, Reversible Computation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proceedings-of-the-twentieth-international-conference-on-quantum-physics-and-logic">Proceedings of the Twentieth International Conference on Quantum Physics and Logic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-equational-theories-for-quantum-circuits">Minimal Equational Theories for Quantum Circuits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A pragma based C++ framework for hybrid quantum/classical computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A Pragma-Based C Framework for Hybrid Quantum Classical Computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing">A tree-approach Pauli decomposition algorithm with application to quantum computing</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langage-de-programmation">Langage de programmation</a><ul class="nav section-nav flex-column">
@@ -403,9 +405,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-sparse-iqp-sampling-in-constant-depth">Robust sparse IQP sampling in constant depth</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unifying-quantum-verification-and-error-detection-theory-and-tools-for-optimisations">Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-automated-deductive-verification-framework-for-circuit-building-quantum-programs">An Automated Deductive Verification Framework for Circuit-building Quantum Programs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fasquic-flexible-architecture-for-scalable-spin-qubit-control">FASQuiC: Flexible architecture for scalable spin qubit control</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-hybride">Calcul hybride</a></li>
 </ul>
             </nav>
         </div>
@@ -424,10 +426,26 @@ document.write(`
 <p class="admonition-title">Important</p>
 <p>La plupart des publications sont référencées sur le portail <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0002&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-R&amp;D Support</a> et <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0001&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-Acquisition</a>. Cependant, certaines publications étant mal référencées, vous trouverez ici les preprints ArXiV.</p>
 </div>
+<section id="calcul-hybride-classique-quantique">
+<h2>Calcul hybride classique/quantique<a class="headerlink" href="#calcul-hybride-classique-quantique" title="Lien vers cette rubrique">#</a></h2>
+<p><a class="reference internal" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A Pragma-Based C Framework for Hybrid Quantum Classical Computation</a></p>
+<p><a class="reference internal" href="#a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing">A tree-approach Pauli decomposition algorithm with application to quantum computing</a></p>
+<p><a class="reference internal" href="#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer">Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer</a></p>
+<p><a class="reference internal" href="#qimaera-type-safe-variational-quantum-programming-in-idris">Qimaera: Type-safe (Variational) Quantum Programming in Idris</a></p>
+<p><a class="reference internal" href="#formal-methods-for-quantum-programs-a-survey">Formal Methods for Quantum Programs: A Survey</a></p>
+<p><a class="reference internal" href="#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze">Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze</a></p>
+<p><a class="reference internal" href="#quantum-expectation-transformers-for-cost-analysis">Quantum Expectation Transformers for Cost Analysis</a></p>
+<p><a class="reference internal" href="#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements">Many-body entropies and entanglement from polynomially-many local measurements</a></p>
+<p><a class="reference internal" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data">Information-theoretic generalization bounds for learning from quantum data</a></p>
+<p><a class="reference internal" href="#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions">Provably Efficient Learning of Phases of Matter via Dissipative Evolutions</a></p>
+<p><a class="reference internal" href="#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning">Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning</a></p>
+<p><a class="reference internal" href="#robust-sparse-iqp-sampling-in-constant-depth">Robust sparse IQP sampling in constant depth</a></p>
+<p><a class="reference internal" href="#sparse-quantum-state-preparation-for-strongly-correlated-systems">Sparse Quantum State Preparation for Strongly Correlated Systems</a></p>
+</section>
 <section id="algorithme-circuit">
 <h2>Algorithme/circuit<a class="headerlink" href="#algorithme-circuit" title="Lien vers cette rubrique">#</a></h2>
 <section id="formal-methods-for-quantum-programs-a-survey">
-<h3>Formal Methods for Quantum Programs: A Survey<a class="headerlink" href="#formal-methods-for-quantum-programs-a-survey" title="Lien vers cette rubrique">#</a></h3>
+<span id="id1"></span><h3>Formal Methods for Quantum Programs: A Survey<a class="headerlink" href="#formal-methods-for-quantum-programs-a-survey" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2109.06493v2">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 14/09/2021</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -680,7 +698,7 @@ unbounded number of qubits. Finally, we also simplify the complete equational
 theories for quantum circuits with ancillary qubits and/or qubit discarding.</p>
 </section>
 <section id="a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">
-<h3>A pragma based C++ framework for hybrid quantum/classical computation<a class="headerlink" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation" title="Lien vers cette rubrique">#</a></h3>
+<span id="id2"></span><h3>A Pragma-Based C Framework for Hybrid Quantum Classical Computation<a class="headerlink" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2309.02605">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 05/09/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -691,6 +709,19 @@ theories for quantum circuits with ancillary qubits and/or qubit discarding.</p>
 <p><strong>Résumé :</strong>
 Quantum computers promise exponential speed ups over classical computers for various tasks. This emerging technology is expected to have its first huge impact in High Performance Computing (HPC), as it can solve problems beyond the reach of HPC. To that end, HPC will require quantum accelerators, which will enable applications to run on both classical and quantum devices, via hybrid quantum-classical nodes. Hybrid quantum-HPC applications should be scalable, executable on Quantum Error Corrected (QEC) devices, and could use quantum-classical primitives. However, the lack of scalability, poor performances, and inability to insert classical schemes within quantum applications has prevented current quantum frameworks from being adopted by the HPC community.
 This paper specifies the requirements of a hybrid quantum-classical framework compatible with HPC environments, and introduces a novel hardware-agnostic framework called Q-Pragma. This framework extends the classical programming language C++ heavily used in HPC via the addition of pragma directives to manage quantum computations.</p>
+</section>
+<section id="a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing">
+<span id="id3"></span><h3>A tree-approach Pauli decomposition algorithm with application to quantum computing<a class="headerlink" href="#a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing" title="Lien vers cette rubrique">#</a></h3>
+<p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2403.11644">ArXiv</a></p>
+<p><strong>Date de publication :</strong> 18/03/2024</p>
+<p><strong>Auteur(s) :</strong></p>
+<ul class="simple">
+<li><p>Oceane Koska</p></li>
+<li><p>Marc Baboulin</p></li>
+<li><p>Arnaud Gazda</p></li>
+</ul>
+<p><strong>Résumé :</strong>
+The Pauli matrices are 2-by-2 matrices that are very useful in quantum computing. They can be used as elementary gates in quantum circuits but also to decompose any matrix of ℂ^2^n^×2^n^^ as a linear combination of tensor products of the Pauli matrices. However, the computational cost of this decomposition is potentially very expensive since it can be exponential in n. In this paper, we propose an algorithm with a parallel implementation that optimizes this decomposition using a tree approach to avoid redundancy in the computation while using a limited memory footprint. We also explain how some particular matrix structures can be exploited to reduce the number of operations. We provide numerical experiments to evaluate the sequential and parallel performance of our decomposition algorithm and we illustrate how this algorithm can be applied to encode matrices in a quantum memory.</p>
 </section>
 </section>
 <section id="langage-de-programmation">
@@ -715,7 +746,7 @@ compiling a PFOQ program to a quantum circuit of size polynomial in the number
 of input qubits.</p>
 </section>
 <section id="quantum-expectation-transformers-for-cost-analysis">
-<h3>Quantum Expectation Transformers for Cost Analysis<a class="headerlink" href="#quantum-expectation-transformers-for-cost-analysis" title="Lien vers cette rubrique">#</a></h3>
+<span id="id4"></span><h3>Quantum Expectation Transformers for Cost Analysis<a class="headerlink" href="#quantum-expectation-transformers-for-cost-analysis" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2201.09361v1">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 23/01/2022</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -740,7 +771,7 @@ well-known quantum algorithms and protocols, such as coin tossing, repeat until
 success, entangled state preparation, and quantum walks.</p>
 </section>
 <section id="qimaera-type-safe-variational-quantum-programming-in-idris">
-<h3>Qimaera: Type-safe (Variational) Quantum Programming in Idris<a class="headerlink" href="#qimaera-type-safe-variational-quantum-programming-in-idris" title="Lien vers cette rubrique">#</a></h3>
+<span id="id5"></span><h3>Qimaera: Type-safe (Variational) Quantum Programming in Idris<a class="headerlink" href="#qimaera-type-safe-variational-quantum-programming-in-idris" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2111.10867v1">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 21/11/2021</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -931,7 +962,7 @@ tomography algorithms, Gibbs approximations to ground states, and
 generalisations of transportation cost inequalities for Gibbs states.</p>
 </section>
 <section id="provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions">
-<h3>Provably Efficient Learning of Phases of Matter via Dissipative Evolutions<a class="headerlink" href="#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions" title="Lien vers cette rubrique">#</a></h3>
+<span id="id6"></span><h3>Provably Efficient Learning of Phases of Matter via Dissipative Evolutions<a class="headerlink" href="#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2311.07506v1">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 13/11/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -969,7 +1000,7 @@ definition of phase, and we derive bounds on the sample complexity which are
 dependent on the mixing time between states under a Lindbladian evolution.</p>
 </section>
 <section id="many-body-entropies-and-entanglement-from-polynomially-many-local-measurements">
-<h3>Many-body entropies and entanglement from polynomially-many local measurements<a class="headerlink" href="#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements" title="Lien vers cette rubrique">#</a></h3>
+<span id="id7"></span><h3>Many-body entropies and entanglement from polynomially-many local measurements<a class="headerlink" href="#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2311.08108v1">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 14/11/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1008,7 +1039,7 @@ today’s quantum platforms.</p>
 <section id="chimie">
 <h2>Chimie<a class="headerlink" href="#chimie" title="Lien vers cette rubrique">#</a></h2>
 <section id="greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer">
-<h3>Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer<a class="headerlink" href="#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer" title="Lien vers cette rubrique">#</a></h3>
+<span id="id8"></span><h3>Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer<a class="headerlink" href="#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2306.17159">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 29/06/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1025,7 +1056,7 @@ today’s quantum platforms.</p>
 Hybrid quantum-classical adaptive Variational Quantum Eigensolvers (VQE) already hold the potential to outperform classical computing for simulating quantum many-body systems. However, their practical implementation on current quantum processing units (QPUs) is very challenging due to the noisy evaluation of a polynomially scaling number of observables, undertaken for operator selection and optimisation of a high-dimensional cost function. To overcome this, we propose new techniques to execute adaptive algorithms on a 25-qubit error-mitigated QPU coupled to a GPU-accelerated HPC simulator. Targeting physics applications, we compute the ground state of a 25-body Ising model using the newly introduced Greedy Gradient-free Adaptive VQE (CGA-VQE) requiring only five circuit measurements per iteration, regardless of the number of qubits and size of the operator pool. Towards chemistry, we combine the GGA-VQE and Overlap-ADAPT-VQE algorithms to approximate a molecular system ground state. We show that the QPU successfully executes the algorithms and yields the correct choice of parametrised unitary operators. While the QPU evaluation of the resulting ansatz wave-function is polluted by hardware noise, a single final evaluation of the sought-after observables on a classical GPU-accelerated/noiseless simulator allows the recovery of the correct approximation of the ground state, thus highlighting the need for hybrid quantum-classical observable measurement.</p>
 </section>
 <section id="overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze">
-<h3>Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze<a class="headerlink" href="#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze" title="Lien vers cette rubrique">#</a></h3>
+<span id="id9"></span><h3>Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze<a class="headerlink" href="#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2301.10196">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 24/01/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1041,7 +1072,7 @@ Hybrid quantum-classical adaptive Variational Quantum Eigensolvers (VQE) already
 ADAPT-VQE is a robust algorithm for hybrid quantum-classical simulations of quantum chemical systems on near-term quantum computers. While its iterative process systematically reaches the ground state energy, ADAPT-VQE is sensitive to local energy minima, leading to over-parameterized ansätze. We introduce the Overlap-ADAPT-VQE to grow wave-functions by maximizing their overlap with any intermediate target wave-function that already captures some electronic correlation. By avoiding building the ansatz in the energy landscape strewn with local minima, the Overlap-ADAPT-VQE produces ultra-compact ansätze suitable for high-accuracy initializations of a new ADAPT procedure. Spectacular advantages over ADAPT-VQE are observed for strongly correlated systems including massive savings in circuit depth. Since this compression strategy can also be initialized with accurate Selected-Configuration Interaction (SCI) classical target wave-functions, it paves the way for chemically accurate simulations of larger systems, and strengthens the promise of decisively surpassing classical quantum chemistry through the power of quantum computing.</p>
 </section>
 <section id="sparse-quantum-state-preparation-for-strongly-correlated-systems">
-<h3>Sparse Quantum State Preparation for Strongly Correlated Systems<a class="headerlink" href="#sparse-quantum-state-preparation-for-strongly-correlated-systems" title="Lien vers cette rubrique">#</a></h3>
+<span id="id10"></span><h3>Sparse Quantum State Preparation for Strongly Correlated Systems<a class="headerlink" href="#sparse-quantum-state-preparation-for-strongly-correlated-systems" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2311.03347">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 06/11/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1076,7 +1107,7 @@ Cooling a quantum system to its ground state is important for the characterizati
 <section id="machine-learning-optimisation">
 <h2>Machine learning/optimisation<a class="headerlink" href="#machine-learning-optimisation" title="Lien vers cette rubrique">#</a></h2>
 <section id="trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning">
-<h3>Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning<a class="headerlink" href="#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning" title="Lien vers cette rubrique">#</a></h3>
+<span id="id11"></span><h3>Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning<a class="headerlink" href="#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2309.15547v1">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 27/09/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1385,7 +1416,7 @@ large-scale characterization of Pauli noise in quantum devices under minimal
 experimental requirements and assumptions.</p>
 </section>
 <section id="information-theoretic-generalization-bounds-for-learning-from-quantum-data">
-<h3>Information-theoretic generalization bounds for learning from quantum data<a class="headerlink" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data" title="Lien vers cette rubrique">#</a></h3>
+<span id="id12"></span><h3>Information-theoretic generalization bounds for learning from quantum data<a class="headerlink" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2311.05529v1">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 09/11/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1447,7 +1478,7 @@ even applies for arbitrarily many sequential uses of the channel, as long as
 they are only interspersed with other unital operations.</p>
 </section>
 <section id="robust-sparse-iqp-sampling-in-constant-depth">
-<h3>Robust sparse IQP sampling in constant depth<a class="headerlink" href="#robust-sparse-iqp-sampling-in-constant-depth" title="Lien vers cette rubrique">#</a></h3>
+<span id="id13"></span><h3>Robust sparse IQP sampling in constant depth<a class="headerlink" href="#robust-sparse-iqp-sampling-in-constant-depth" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Lien de l’article :</strong> <a class="reference external" href="http://arxiv.org/abs/2307.10729v4">ArXiv</a></p>
 <p><strong>Date de publication :</strong> 20/07/2023</p>
 <p><strong>Auteur(s) :</strong></p>
@@ -1511,21 +1542,35 @@ This approach thereby provides the desired modularity as our sufficient conditio
 <p><strong>Résumé :</strong><br />
 While recent progress in quantum hardware open the door for significant speedup in certain key areas, quantum algorithms are still hard to implement right, and the validation of such quantum programs is a challenge. Early attempts either suffer from the lack of automation or parametrized reasoning, or target high-level abstract algorithm description languages far from the current de facto consensus of circuit-building quantum programming languages. As a consequence, no significant quantum algorithm implementation has been currently verified in a scale-invariant manner. We propose Qbricks, the first formal verification environment for circuit-building quantum programs, featuring clear separation between code and proof, parametric specifications and proofs, high degree of proof automation and allowing to encode quantum programs in a natural way, i.e. close to textbook style. Qbricks builds on best practice of formal verification for the classical case and tailor them to the quantum case: we bring a new domain-specific circuit-building language for quantum programs, namely Qbricks-DSL, together with a new logical specification language Qbricks-Spec and a dedicated Hoare-style deductive verification rule named Hybrid Quantum Hoare Logic. Especially, we introduce and intensively build upon HOPS, a higher-order extension of the recent path-sum symbolic representation, used for both specification and automation. To illustrate the opportunity of Qbricks, we implement the first verified parametric implementations of several famous and non-trivial quantum algorithms, including the quantum part of Shor integer factoring (Order Finding - Shor-OF), quantum phase estimation (QPE) - a basic building block of many quantum algorithms, and Grover search. These breakthroughs were amply facilitated by the specification and automated deduction principles introduced within Qbricks.</p>
 </section>
+<section id="fasquic-flexible-architecture-for-scalable-spin-qubit-control">
+<h3>FASQuiC: Flexible architecture for scalable spin qubit control<a class="headerlink" href="#fasquic-flexible-architecture-for-scalable-spin-qubit-control" title="Lien vers cette rubrique">#</a></h3>
+<p><strong>Lien de l’article :</strong> <a class="reference external" href="https://cea.hal.science/cea-04612422">HAL</a></p>
+<p><strong>Date de publication :</strong> 14/06/2024</p>
+<p><strong>Auteur(s) :</strong></p>
+<ul class="simple">
+<li><p>Mathieu Toubeix</p></li>
+<li><p>Eric Guthmuller</p></li>
+<li><p>Adrian Evans</p></li>
+<li><p>Antoine Faurie</p></li>
+<li><p>Tristan Meunier</p></li>
+</ul>
+<p><strong>Résumé :</strong><br />
+As scaling becomes a key issue for Large Scale Quantum (LSQ) computing, hardware
+control systems will become increasingly costly in resources. This paper presents a compact Direct Digital
+Synthesis (DDS) architecture for signal generation adapted for spin qubits, which is scalable in terms of
+waveform accuracy and the number of synchronized channels. The architecture can produce programmable
+combinations of ramps, frequency combs and Arbitrary Waveform Generation (AWG) at 5 GS/s, with
+a worst-case digital feedback latency of 76.8 ns. The FPGA-based system is highly configurable and
+takes advantage of bitstream switching to achieve the high flexibility required for scalable calibration.
+The architecture also provides GHz rate multiplexed I/Q single-side band (SSB) modulation for scalable
+reflectometry. This architecture has been validated in hardware on a Xilinx ZCU111 FPGA demonstrating
+the mixing of complex signals and the quality of the frequency comb generation for multiplexed control
+and measurement. The key benefits of this design are the increase of controllability of ramps at the Digital
+to Analog Converter (DAC) frequency and the reduction in memory requirements by several orders of
+magnitude compared to existing AWG-based architectures. The hardware for a single channel is very
+compact, 2% of ZCU111 logic resources for one DAC lane in the default configuration, leaving significant
+circuit resources for integrated feedback, calibration and Quantum Error Correction (QEC).</p>
 </section>
-<section id="calcul-hybride">
-<h2>Calcul hybride<a class="headerlink" href="#calcul-hybride" title="Lien vers cette rubrique">#</a></h2>
-<p><a class="reference internal" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation"><span class="xref myst">A pragma based C++ framework for hybrid quantum/classical computation</span></a></p>
-<p><a class="reference internal" href="#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer"><span class="xref myst">Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer</span></a></p>
-<p><a class="reference internal" href="#qimaera:-type-safe-variational-quantum-programming-in-idris"><span class="xref myst">Qimaera: Type-safe (Variational) Quantum Programming in Idris</span></a></p>
-<p><a class="reference internal" href="#formal-methods-for-quantum-programs-a-survey"><span class="xref myst">Formal Methods for Quantum Programs: A Survey</span></a></p>
-<p><a class="reference internal" href="#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze"><span class="xref myst">Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze</span></a></p>
-<p><a class="reference internal" href="#quantum-expectation-transformers-for-cost-analysis"><span class="xref myst">Quantum Expectation Transformers for Cost Analysis</span></a></p>
-<p><a class="reference internal" href="#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements"><span class="xref myst">Many-body entropies and entanglement from polynomially-many local measurements</span></a></p>
-<p><a class="reference internal" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data"><span class="xref myst">Information-theoretic generalization bounds for learning from quantum data</span></a></p>
-<p><a class="reference internal" href="#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions"><span class="xref myst">Provably Efficient Learning of Phases of Matter via Dissipative Evolutions</span></a></p>
-<p><a class="reference internal" href="#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning"><span class="xref myst">Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning</span></a></p>
-<p><a class="reference internal" href="#robust-sparse-iqp-sampling-in-constant-depth"><span class="xref myst">Robust sparse IQP sampling in constant depth</span></a></p>
-<p><a class="reference internal" href="#sparse-quantum-state-preparation-for-strongly-correlated-systems"><span class="xref myst">Sparse Quantum State Preparation for Strongly Correlated Systems</span></a></p>
 </section>
 </section>
 
@@ -1584,6 +1629,7 @@ While recent progress in quantum hardware open the door for significant speedup 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-hybride-classique-quantique">Calcul hybride classique/quantique</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme-circuit">Algorithme/circuit</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-methods-for-quantum-programs-a-survey">Formal Methods for Quantum Programs: A Survey</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-hadamard-gate-count-for-clifford-t-synthesis-of-pauli-rotations-sequences">Optimal Hadamard gate count for Clifford<span class="math notranslate nohighlight">\(+T\)</span> synthesis of Pauli rotations sequences</a></li>
@@ -1595,7 +1641,8 @@ While recent progress in quantum hardware open the door for significant speedup 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-curry-howard-correspondence-for-linear-reversible-computation">A Curry-Howard Correspondence for Linear, Reversible Computation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proceedings-of-the-twentieth-international-conference-on-quantum-physics-and-logic">Proceedings of the Twentieth International Conference on Quantum Physics and Logic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-equational-theories-for-quantum-circuits">Minimal Equational Theories for Quantum Circuits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A pragma based C++ framework for hybrid quantum/classical computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A Pragma-Based C Framework for Hybrid Quantum Classical Computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing">A tree-approach Pauli decomposition algorithm with application to quantum computing</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langage-de-programmation">Langage de programmation</a><ul class="nav section-nav flex-column">
@@ -1644,9 +1691,9 @@ While recent progress in quantum hardware open the door for significant speedup 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-sparse-iqp-sampling-in-constant-depth">Robust sparse IQP sampling in constant depth</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unifying-quantum-verification-and-error-detection-theory-and-tools-for-optimisations">Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-automated-deductive-verification-framework-for-circuit-building-quantum-programs">An Automated Deductive Verification Framework for Circuit-building Quantum Programs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fasquic-flexible-architecture-for-scalable-spin-qubit-control">FASQuiC: Flexible architecture for scalable spin qubit control</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-hybride">Calcul hybride</a></li>
 </ul>
   </nav></div>
 
