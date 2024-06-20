@@ -354,6 +354,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-curry-howard-correspondence-for-linear-reversible-computation">A Curry-Howard Correspondence for Linear, Reversible Computation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proceedings-of-the-twentieth-international-conference-on-quantum-physics-and-logic">Proceedings of the Twentieth International Conference on Quantum Physics and Logic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-equational-theories-for-quantum-circuits">Minimal Equational Theories for Quantum Circuits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A pragma based C++ framework for hybrid quantum/classical computation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langage-de-programmation">Langage de programmation</a><ul class="nav section-nav flex-column">
@@ -400,8 +401,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data">Information-theoretic generalization bounds for learning from quantum data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lower-bounds-on-learning-pauli-channels">Lower Bounds on Learning Pauli Channels</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-sparse-iqp-sampling-in-constant-depth">Robust sparse IQP sampling in constant depth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unifying-quantum-verification-and-error-detection-theory-and-tools-for-optimisations">Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-automated-deductive-verification-framework-for-circuit-building-quantum-programs">An Automated Deductive Verification Framework for Circuit-building Quantum Programs</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-hybride">Calcul hybride</a></li>
 </ul>
             </nav>
         </div>
@@ -674,6 +678,19 @@ ones. More generally, we demonstrate that any complete equational theory on
 quantum circuits (when all gates are unitary) requires rules acting on an
 unbounded number of qubits. Finally, we also simplify the complete equational
 theories for quantum circuits with ancillary qubits and/or qubit discarding.</p>
+</section>
+<section id="a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">
+<h3>A pragma based C++ framework for hybrid quantum/classical computation<a class="headerlink" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation" title="Lien vers cette rubrique">#</a></h3>
+<p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2309.02605">ArXiv</a></p>
+<p><strong>Date de publication :</strong> 05/09/2023</p>
+<p><strong>Auteur(s) :</strong></p>
+<ul class="simple">
+<li><p>Arnaud Gazda</p></li>
+<li><p>Oceane Koska</p></li>
+</ul>
+<p><strong>Résumé :</strong>
+Quantum computers promise exponential speed ups over classical computers for various tasks. This emerging technology is expected to have its first huge impact in High Performance Computing (HPC), as it can solve problems beyond the reach of HPC. To that end, HPC will require quantum accelerators, which will enable applications to run on both classical and quantum devices, via hybrid quantum-classical nodes. Hybrid quantum-HPC applications should be scalable, executable on Quantum Error Corrected (QEC) devices, and could use quantum-classical primitives. However, the lack of scalability, poor performances, and inability to insert classical schemes within quantum applications has prevented current quantum frameworks from being adopted by the HPC community.
+This paper specifies the requirements of a hybrid quantum-classical framework compatible with HPC environments, and introduces a novel hardware-agnostic framework called Q-Pragma. This framework extends the classical programming language C++ heavily used in HPC via the addition of pragma directives to manage quantum computations.</p>
 </section>
 </section>
 <section id="langage-de-programmation">
@@ -1462,6 +1479,53 @@ a robust superpolynomial quantum advantage for a sampling problem implemented
 on a constant depth circuit with a single round of measurement and
 feed-forward.</p>
 </section>
+<section id="unifying-quantum-verification-and-error-detection-theory-and-tools-for-optimisations">
+<h3>Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations<a class="headerlink" href="#unifying-quantum-verification-and-error-detection-theory-and-tools-for-optimisations" title="Lien vers cette rubrique">#</a></h3>
+<p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2206.00631">ArXiv</a></p>
+<p><strong>Date de publication :</strong> 01/06/2022</p>
+<p><strong>Auteur(s) :</strong></p>
+<ul class="simple">
+<li><p>Theodoros Kapourniotis</p></li>
+<li><p>Elham Kashefi</p></li>
+<li><p>Dominik Leichtle</p></li>
+<li><p>Luka Music</p></li>
+<li><p>Harold Ollivier</p></li>
+</ul>
+<p><strong>Résumé :</strong>
+With the advent of cloud-based quantum computing, it has become vital to provide strong guarantees that computations delegated by clients to quantum service providers have been executed faithfully. Secure - blind and verifiable - Delegated Quantum Computing (SDQC) has emerged as one of the key approaches to address this challenge, yet current protocols lack at least one of the following three ingredients: composability, noise-robustness and modularity.
+To tackle this question, our paper lays out the fundamental structure of SDQC protocols, namely mixing two components: the computation which the client would like the server to perform and tests that are designed to detect a server’s malicious behaviour. Using this abstraction, our main technical result is a set of sufficient conditions on these components which imply the security and noise-robustness of generic SDQC protocols in the composable Abstract Cryptography framework. This is done by establishing a correspondence between these security properties and the error-detection capabilities of the test computations. Changing the types of tests and how they are mixed with the client’s computation automatically yields new SDQC protocols with different security and noise-robustness capabilities.
+This approach thereby provides the desired modularity as our sufficient conditions on test computations simplify the steps required to prove the security of the protocols and allows to focus on the design and optimisation of test rounds to specific situations. We showcase this by systematising the search for improved SDQC protocols for Bounded-error Quantum Polynomial-time computations. The resulting protocols do not require more hardware on the server’s side than what is necessary to blindly delegate the computation without verification, and they outperform all previously known results.</p>
+</section>
+<section id="an-automated-deductive-verification-framework-for-circuit-building-quantum-programs">
+<h3>An Automated Deductive Verification Framework for Circuit-building Quantum Programs<a class="headerlink" href="#an-automated-deductive-verification-framework-for-circuit-building-quantum-programs" title="Lien vers cette rubrique">#</a></h3>
+<p><strong>Lien de l’article :</strong> <a class="reference external" href="https://arxiv.org/abs/2003.05841">ArXiv</a></p>
+<p><strong>Date de publication :</strong> 12/03/2020</p>
+<p><strong>Auteur(s) :</strong></p>
+<ul class="simple">
+<li><p>Christophe Chareton</p></li>
+<li><p>Sébastien Bardin</p></li>
+<li><p>François Bobot</p></li>
+<li><p>Valentin Perrelle</p></li>
+<li><p>Benoit Valiron</p></li>
+</ul>
+<p><strong>Résumé :</strong><br />
+While recent progress in quantum hardware open the door for significant speedup in certain key areas, quantum algorithms are still hard to implement right, and the validation of such quantum programs is a challenge. Early attempts either suffer from the lack of automation or parametrized reasoning, or target high-level abstract algorithm description languages far from the current de facto consensus of circuit-building quantum programming languages. As a consequence, no significant quantum algorithm implementation has been currently verified in a scale-invariant manner. We propose Qbricks, the first formal verification environment for circuit-building quantum programs, featuring clear separation between code and proof, parametric specifications and proofs, high degree of proof automation and allowing to encode quantum programs in a natural way, i.e. close to textbook style. Qbricks builds on best practice of formal verification for the classical case and tailor them to the quantum case: we bring a new domain-specific circuit-building language for quantum programs, namely Qbricks-DSL, together with a new logical specification language Qbricks-Spec and a dedicated Hoare-style deductive verification rule named Hybrid Quantum Hoare Logic. Especially, we introduce and intensively build upon HOPS, a higher-order extension of the recent path-sum symbolic representation, used for both specification and automation. To illustrate the opportunity of Qbricks, we implement the first verified parametric implementations of several famous and non-trivial quantum algorithms, including the quantum part of Shor integer factoring (Order Finding - Shor-OF), quantum phase estimation (QPE) - a basic building block of many quantum algorithms, and Grover search. These breakthroughs were amply facilitated by the specification and automated deduction principles introduced within Qbricks.</p>
+</section>
+</section>
+<section id="calcul-hybride">
+<h2>Calcul hybride<a class="headerlink" href="#calcul-hybride" title="Lien vers cette rubrique">#</a></h2>
+<p><a class="reference internal" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation"><span class="xref myst">A pragma based C++ framework for hybrid quantum/classical computation</span></a></p>
+<p><a class="reference internal" href="#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer"><span class="xref myst">Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer</span></a></p>
+<p><a class="reference internal" href="#qimaera:-type-safe-variational-quantum-programming-in-idris"><span class="xref myst">Qimaera: Type-safe (Variational) Quantum Programming in Idris</span></a></p>
+<p><a class="reference internal" href="#formal-methods-for-quantum-programs-a-survey"><span class="xref myst">Formal Methods for Quantum Programs: A Survey</span></a></p>
+<p><a class="reference internal" href="#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze"><span class="xref myst">Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze</span></a></p>
+<p><a class="reference internal" href="#quantum-expectation-transformers-for-cost-analysis"><span class="xref myst">Quantum Expectation Transformers for Cost Analysis</span></a></p>
+<p><a class="reference internal" href="#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements"><span class="xref myst">Many-body entropies and entanglement from polynomially-many local measurements</span></a></p>
+<p><a class="reference internal" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data"><span class="xref myst">Information-theoretic generalization bounds for learning from quantum data</span></a></p>
+<p><a class="reference internal" href="#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions"><span class="xref myst">Provably Efficient Learning of Phases of Matter via Dissipative Evolutions</span></a></p>
+<p><a class="reference internal" href="#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning"><span class="xref myst">Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning</span></a></p>
+<p><a class="reference internal" href="#robust-sparse-iqp-sampling-in-constant-depth"><span class="xref myst">Robust sparse IQP sampling in constant depth</span></a></p>
+<p><a class="reference internal" href="#sparse-quantum-state-preparation-for-strongly-correlated-systems"><span class="xref myst">Sparse Quantum State Preparation for Strongly Correlated Systems</span></a></p>
 </section>
 </section>
 
@@ -1531,6 +1595,7 @@ feed-forward.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-curry-howard-correspondence-for-linear-reversible-computation">A Curry-Howard Correspondence for Linear, Reversible Computation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proceedings-of-the-twentieth-international-conference-on-quantum-physics-and-logic">Proceedings of the Twentieth International Conference on Quantum Physics and Logic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-equational-theories-for-quantum-circuits">Minimal Equational Theories for Quantum Circuits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation">A pragma based C++ framework for hybrid quantum/classical computation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langage-de-programmation">Langage de programmation</a><ul class="nav section-nav flex-column">
@@ -1577,8 +1642,11 @@ feed-forward.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-theoretic-generalization-bounds-for-learning-from-quantum-data">Information-theoretic generalization bounds for learning from quantum data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lower-bounds-on-learning-pauli-channels">Lower Bounds on Learning Pauli Channels</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-sparse-iqp-sampling-in-constant-depth">Robust sparse IQP sampling in constant depth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unifying-quantum-verification-and-error-detection-theory-and-tools-for-optimisations">Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-automated-deductive-verification-framework-for-circuit-building-quantum-programs">An Automated Deductive Verification Framework for Circuit-building Quantum Programs</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-hybride">Calcul hybride</a></li>
 </ul>
   </nav></div>
 

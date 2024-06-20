@@ -271,6 +271,20 @@ quantum circuits (when all gates are unitary) requires rules acting on an
 unbounded number of qubits. Finally, we also simplify the complete equational
 theories for quantum circuits with ancillary qubits and/or qubit discarding.
 
+### A pragma based C++ framework for hybrid quantum/classical computation
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2309.02605)
+
+**Date de publication :** 05/09/2023
+
+**Auteur(s) :**
+- Arnaud Gazda
+- Oceane Koska
+
+**Résumé :**
+Quantum computers promise exponential speed ups over classical computers for various tasks. This emerging technology is expected to have its first huge impact in High Performance Computing (HPC), as it can solve problems beyond the reach of HPC. To that end, HPC will require quantum accelerators, which will enable applications to run on both classical and quantum devices, via hybrid quantum-classical nodes. Hybrid quantum-HPC applications should be scalable, executable on Quantum Error Corrected (QEC) devices, and could use quantum-classical primitives. However, the lack of scalability, poor performances, and inability to insert classical schemes within quantum applications has prevented current quantum frameworks from being adopted by the HPC community.
+This paper specifies the requirements of a hybrid quantum-classical framework compatible with HPC environments, and introduces a novel hardware-agnostic framework called Q-Pragma. This framework extends the classical programming language C++ heavily used in HPC via the addition of pragma directives to manage quantum computations. 
+
 ## Langage de programmation
 
 ### A programming language characterizing quantum polynomial time
@@ -1082,3 +1096,63 @@ step of feed-forward from classical computation. Our construction thus exhibits
 a robust superpolynomial quantum advantage for a sampling problem implemented
 on a constant depth circuit with a single round of measurement and
 feed-forward.
+
+### Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2206.00631)
+
+**Date de publication :** 01/06/2022
+
+**Auteur(s) :**
+- Theodoros Kapourniotis
+- Elham Kashefi
+- Dominik Leichtle
+- Luka Music
+- Harold Ollivier
+
+**Résumé :**
+With the advent of cloud-based quantum computing, it has become vital to provide strong guarantees that computations delegated by clients to quantum service providers have been executed faithfully. Secure - blind and verifiable - Delegated Quantum Computing (SDQC) has emerged as one of the key approaches to address this challenge, yet current protocols lack at least one of the following three ingredients: composability, noise-robustness and modularity.
+To tackle this question, our paper lays out the fundamental structure of SDQC protocols, namely mixing two components: the computation which the client would like the server to perform and tests that are designed to detect a server's malicious behaviour. Using this abstraction, our main technical result is a set of sufficient conditions on these components which imply the security and noise-robustness of generic SDQC protocols in the composable Abstract Cryptography framework. This is done by establishing a correspondence between these security properties and the error-detection capabilities of the test computations. Changing the types of tests and how they are mixed with the client's computation automatically yields new SDQC protocols with different security and noise-robustness capabilities.
+This approach thereby provides the desired modularity as our sufficient conditions on test computations simplify the steps required to prove the security of the protocols and allows to focus on the design and optimisation of test rounds to specific situations. We showcase this by systematising the search for improved SDQC protocols for Bounded-error Quantum Polynomial-time computations. The resulting protocols do not require more hardware on the server's side than what is necessary to blindly delegate the computation without verification, and they outperform all previously known results. 
+
+### An Automated Deductive Verification Framework for Circuit-building Quantum Programs
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2003.05841)
+
+**Date de publication :** 12/03/2020
+
+**Auteur(s) :**
+- Christophe Chareton
+- Sébastien Bardin
+- François Bobot
+- Valentin Perrelle
+- Benoit Valiron
+
+**Résumé :**     
+While recent progress in quantum hardware open the door for significant speedup in certain key areas, quantum algorithms are still hard to implement right, and the validation of such quantum programs is a challenge. Early attempts either suffer from the lack of automation or parametrized reasoning, or target high-level abstract algorithm description languages far from the current de facto consensus of circuit-building quantum programming languages. As a consequence, no significant quantum algorithm implementation has been currently verified in a scale-invariant manner. We propose Qbricks, the first formal verification environment for circuit-building quantum programs, featuring clear separation between code and proof, parametric specifications and proofs, high degree of proof automation and allowing to encode quantum programs in a natural way, i.e. close to textbook style. Qbricks builds on best practice of formal verification for the classical case and tailor them to the quantum case: we bring a new domain-specific circuit-building language for quantum programs, namely Qbricks-DSL, together with a new logical specification language Qbricks-Spec and a dedicated Hoare-style deductive verification rule named Hybrid Quantum Hoare Logic. Especially, we introduce and intensively build upon HOPS, a higher-order extension of the recent path-sum symbolic representation, used for both specification and automation. To illustrate the opportunity of Qbricks, we implement the first verified parametric implementations of several famous and non-trivial quantum algorithms, including the quantum part of Shor integer factoring (Order Finding - Shor-OF), quantum phase estimation (QPE) - a basic building block of many quantum algorithms, and Grover search. These breakthroughs were amply facilitated by the specification and automated deduction principles introduced within Qbricks. 
+
+## Calcul hybride
+
+[A pragma based C++ framework for hybrid quantum/classical computation](#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation)
+
+[Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer](#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer)
+
+[Qimaera: Type-safe (Variational) Quantum Programming in Idris](#qimaera:-type-safe-variational-quantum-programming-in-idris)
+
+[Formal Methods for Quantum Programs: A Survey](#formal-methods-for-quantum-programs-a-survey)
+
+[Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze](#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze)
+
+[Quantum Expectation Transformers for Cost Analysis](#quantum-expectation-transformers-for-cost-analysis)
+
+[Many-body entropies and entanglement from polynomially-many local measurements](#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements)
+
+[Information-theoretic generalization bounds for learning from quantum data](#information-theoretic-generalization-bounds-for-learning-from-quantum-data)
+
+[Provably Efficient Learning of Phases of Matter via Dissipative Evolutions](#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions)
+
+[Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning](#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning)
+
+[Robust sparse IQP sampling in constant depth](#robust-sparse-iqp-sampling-in-constant-depth)
+
+[Sparse Quantum State Preparation for Strongly Correlated Systems](#sparse-quantum-state-preparation-for-strongly-correlated-systems)

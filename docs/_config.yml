@@ -21,8 +21,8 @@ html:
   baseurl: https://hqi.fr/
 
 
-launch_buttons:
-  jupyterhub_url: "https://jupyterhub.ijclab.in2p3.fr/"  # The URL for your JupyterHub. (e.g., https://datahub.berkeley.edu)
+#launch_buttons:
+#  jupyterhub_url: ""
 
 sphinx:
   config:
