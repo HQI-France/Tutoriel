@@ -5,6 +5,286 @@
   ```{important} 
  La plupart des publications sont référencées sur le portail <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0002&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-R&D Support</a> et <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0001&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-Acquisition</a>. Cependant, certaines publications étant mal référencées, vous trouverez ici les preprints ArXiV.
  ``` 
+
+## Algorithme/circuit
+
+### Formal Methods for Quantum Programs: A Survey
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2109.06493v2)
+
+**Date de publication :** 14/09/2021
+
+**Auteur(s) :**
+- Christophe Chareton
+- Sébastien Bardin
+- Dongho Lee
+- Benoît Valiron
+- Renaud Vilmart
+- Zhaowei Xu
+
+**Résumé :**
+While recent progress in quantum hardware open the door for significant
+speedup in certain key areas (cryptography, biology, chemistry, optimization,
+machine learning, etc), quantum algorithms are still hard to implement right,
+and the validation of such quantum programs is achallenge. Moreover, importing
+the testing and debugging practices at use in classical programming is
+extremely difficult in the quantum case, due to the destructive aspect of
+quantum measurement. As an alternative strategy, formal methods are prone to
+play a decisive role in the emerging field of quantum software. Recent works
+initiate solutions for problems occurring at every stage of the development
+process: high-level program design, implementation, compilation, etc. We review
+the induced challenges for an efficient use of formal methods in quantum
+computing and the current most promising research directions.
+
+### Optimal Hadamard gate count for Clifford$+T$ synthesis of Pauli rotations sequences
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2302.07040v3)
+
+**Date de publication :** 14/02/2023
+
+**Auteur(s) :**
+- Vivien Vandaele
+- Simon Martiel
+- Simon Perdrix
+- Christophe Vuillot
+
+**Résumé :**
+The Clifford$+T$ gate set is commonly used to perform universal quantum
+computation. In such setup the $T$ gate is typically much more expensive to
+implement in a fault-tolerant way than Clifford gates. To improve the
+feasibility of fault-tolerant quantum computing it is then crucial to minimize
+the number of $T$ gates. Many algorithms, yielding effective results, have been
+designed to address this problem. It has been demonstrated that performing a
+pre-processing step consisting of reducing the number of Hadamard gates in the
+circuit can help to exploit the full potential of these algorithms and thereby
+lead to a substantial $T$-count reduction. Moreover, minimizing the number of
+Hadamard gates also restrains the number of additional qubits and operations
+resulting from the gadgetization of Hadamard gates, a procedure used by some
+compilers to further reduce the number of $T$ gates. In this work we tackle the
+Hadamard gate reduction problem, and propose an algorithm for synthesizing a
+sequence of $\pi/4$ Pauli rotations with a minimal number of Hadamard gates.
+Based on this result, we present an algorithm which optimally minimizes the
+number of Hadamard gates lying between the first and the last $T$ gate of the
+circuit.
+
+### On the Hardness of Analyzing Quantum Programs Quantitatively
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2312.13657v1)
+
+**Date de publication :** 21/12/2023
+
+**Auteur(s) :**
+- Martin Avanzini
+- Georg Moser
+- Romain Péchoux
+- Simon Perdrix
+
+**Résumé :**
+In this paper, we study quantitative properties of quantum programs.
+Properties of interest include (positive) almost-sure termination, expected
+runtime or expected cost, that is, for example, the expected number of
+applications of a given quantum gate, etc. After studying the completeness of
+these problems in the arithmetical hierarchy over the Clifford+T fragment of
+quantum mechanics, we express these problems using a variation of a quantum
+pre-expectation transformer, a weakest precondition based technique that allows
+to symbolically compute these quantitative properties. Under a smooth
+restriction-a restriction to polynomials of bounded degree over a real closed
+field-we show that the quantitative problem, which consists in finding an
+upper-bound to the pre-expectation, can be decided in time double-exponential
+in the size of a program, thus providing, despite its great complexity, one of
+the first decidable results on the analysis and verification of quantum
+programs. Finally, we sketch how the latter can be transformed into an
+efficient synthesis method.
+
+### Completeness of Sum-Over-Paths for Toffoli-Hadamard and the Dyadic Fragments of Quantum Computation
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2205.02600v2)
+
+**Date de publication :** 05/05/2022
+
+**Auteur(s) :**
+- Renaud Vilmart
+
+**Résumé :**
+The "Sum-Over-Paths" formalism is a way to symbolically manipulate linear
+maps that describe quantum systems, and is a tool that is used in formal
+verification of such systems. We give here a new set of rewrite rules for the
+formalism, and show that it is complete for "Toffoli-Hadamard", the simplest
+approximately universal fragment of quantum mechanics. We show that the
+rewriting is terminating, but not confluent (which is expected from the
+universality of the fragment). We do so using the connection between
+Sum-over-Paths and graphical language ZH-Calculus, and also show how the
+axiomatisation translates into the latter. Finally, we show how to enrich the
+rewrite system to reach completeness for the dyadic fragments of quantum
+computation -- obtained by adding phase gates with dyadic multiples of $\pi$ to
+the Toffoli-Hadamard gate-set -- used in particular in the Quantum Fourier
+Transform.
+
+### Rewriting and Completeness of Sum-Over-Paths in Dyadic Fragments of Quantum Computing
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2307.14223v4)
+
+**Date de publication :** 26/07/2023
+
+**Auteur(s) :**
+- Renaud Vilmart
+
+**Résumé :**
+The "Sum-Over-Paths" formalism is a way to symbolically manipulate linear
+maps that describe quantum systems, and is a tool that is used in formal
+verification of such systems. We give here a new set of rewrite rules for the
+formalism, and show that it is complete for "Toffoli-Hadamard", the simplest
+approximately universal fragment of quantum mechanics. We show that the
+rewriting is terminating, but not confluent (which is expected from the
+universality of the fragment). We do so using the connection between
+Sum-over-Paths and graphical language ZH-calculus, and also show how the
+axiomatisation translates into the latter. We provide generalisations of the
+presented rewrite rules, that can prove useful when trying to reduce terms in
+practice, and we show how to graphically make sense of these new rules. We show
+how to enrich the rewrite system to reach completeness for the dyadic fragments
+of quantum computation, used in particular in the Quantum Fourier Transform,
+and obtained by adding phase gates with dyadic multiples of $\pi$ to the
+Toffoli-Hadamard gate-set. Finally, we show how to perform sums and
+concatenation of arbitrary terms, something which is not native in a system
+designed for analysing gate-based quantum computation, but necessary when
+considering Hamiltonian-based quantum computation.
+
+### A Complete Equational Theory for Quantum Circuits
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2206.10577v2)
+
+**Date de publication :** 21/06/2022
+
+**Auteur(s) :**
+- Alexandre Clément
+- Nicolas Heurtel
+- Shane Mansfield
+- Simon Perdrix
+- Benoît Valiron
+
+**Résumé :**
+We introduce the first complete equational theory for quantum circuits. More
+precisely, we introduce a set of circuit equations that we prove to be sound
+and complete: two circuits represent the same unitary map if and only if they
+can be transformed one into the other using the equations. The proof is based
+on the properties of multi-controlled gates -- that are defined using
+elementary gates -- together with an encoding of quantum circuits into linear
+optical circuits, which have been proved to have a complete axiomatisation.
+
+### Quantum Circuit Completeness: Extensions and Simplifications
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2303.03117v3)
+
+**Date de publication :** 06/03/2023
+
+**Auteur(s) :**
+- Alexandre Clément
+- Noé Delorme
+- Simon Perdrix
+- Renaud Vilmart
+
+**Résumé :**
+Although quantum circuits have been ubiquitous for decades in quantum
+computing, the first complete equational theory for quantum circuits has only
+recently been introduced. Completeness guarantees that any true equation on
+quantum circuits can be derived from the equational theory. We improve this
+completeness result in two ways: (i) We simplify the equational theory by
+proving that several rules can be derived from the remaining ones. In
+particular, two out of the three most intricate rules are removed, the third
+one being slightly simplified. (ii) The complete equational theory can be
+extended to quantum circuits with ancillae or qubit discarding, to represent
+respectively quantum computations using an additional workspace, and hybrid
+quantum computations. We show that the remaining intricate rule can be greatly
+simplified in these more expressive settings, leading to equational theories
+where all equations act on a bounded number of qubits. The development of
+simple and complete equational theories for expressive quantum circuit models
+opens new avenues for reasoning about quantum circuits. It provides strong
+formal foundations for various compiling tasks such as circuit optimisation,
+hardware constraint satisfaction and verification.
+
+### A Curry-Howard Correspondence for Linear, Reversible Computation
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2302.11887v3)
+
+**Date de publication :** 23/02/2023
+
+**Auteur(s) :**
+- Kostia Chardonnet
+- Alexis Saurin
+- Benoît Valiron
+
+**Résumé :**
+In this paper, we present a linear and reversible programming language with
+inductives types and recursion. The semantics of the languages is based on
+pattern-matching; we show how ensuring syntactical exhaustivity and
+non-overlapping of clauses is enough to ensure reversibility. The language
+allows to represent any Primitive Recursive Function. We then give a
+Curry-Howard correspondence with the logic $\mu$MALL: linear logic extended
+with least fixed points allowing inductive statements. The critical part of our
+work is to show how primitive recursion yields circular proofs that satisfy
+$\mu$MALL validity criterion and how the language simulates the cut-elimination
+procedure of $\mu$MALL.
+
+### Proceedings of the Twentieth International Conference on Quantum Physics and Logic
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2308.15489v2)
+
+**Date de publication :** 23/08/2023
+
+**Auteur(s) :**
+- Shane Mansfield
+- Benoît Valiron
+- Vladimir Zamdzhiev
+
+**Résumé :**
+This volume contains the proceedings of the 20th International Conference on
+Quantum Physics and Logic (QPL 2023). The aim of the QPL conference series is
+to bring together academic and industry researchers working on mathematical
+foundations of quantum computation, quantum physics, and related areas. The
+main focus is on the use of algebraic and categorical structures, formal
+languages, type systems, semantic methods, as well as other mathematical and
+computer scientific techniques applicable to the study of physical systems,
+physical processes, and their composition.
+
+### Minimal Equational Theories for Quantum Circuits
+
+**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2311.07476v2)
+
+**Date de publication :** 13/11/2023
+
+**Auteur(s) :**
+- Alexandre Clément
+- Noé Delorme
+- Simon Perdrix
+
+**Résumé :**
+We introduce the first minimal and complete equational theory for quantum
+circuits. Hence, we show that any true equation on quantum circuits can be
+derived from simple rules, all of them being standard except a novel but
+intuitive one which states that a multi-control $2\pi$ rotation is nothing but
+the identity. Our work improves on the recent complete equational theories for
+quantum circuits, by getting rid of several rules including a fairly
+impractical one. One of our main contributions is to prove the minimality of
+the equational theory, i.e. none of the rules can be derived from the other
+ones. More generally, we demonstrate that any complete equational theory on
+quantum circuits (when all gates are unitary) requires rules acting on an
+unbounded number of qubits. Finally, we also simplify the complete equational
+theories for quantum circuits with ancillary qubits and/or qubit discarding.
+
+### A pragma based C++ framework for hybrid quantum/classical computation
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2309.02605)
+
+**Date de publication :** 05/09/2023
+
+**Auteur(s) :**
+- Arnaud Gazda
+- Oceane Koska
+
+**Résumé :**
+Quantum computers promise exponential speed ups over classical computers for various tasks. This emerging technology is expected to have its first huge impact in High Performance Computing (HPC), as it can solve problems beyond the reach of HPC. To that end, HPC will require quantum accelerators, which will enable applications to run on both classical and quantum devices, via hybrid quantum-classical nodes. Hybrid quantum-HPC applications should be scalable, executable on Quantum Error Corrected (QEC) devices, and could use quantum-classical primitives. However, the lack of scalability, poor performances, and inability to insert classical schemes within quantum applications has prevented current quantum frameworks from being adopted by the HPC community.
+This paper specifies the requirements of a hybrid quantum-classical framework compatible with HPC environments, and introduces a novel hardware-agnostic framework called Q-Pragma. This framework extends the classical programming language C++ heavily used in HPC via the addition of pragma directives to manage quantum computations. 
+
 ## Langage de programmation
 
 ### A programming language characterizing quantum polynomial time
@@ -324,6 +604,79 @@ more general, physically-interesting cases, including thermal states of local
 Hamiltonians. We argue that our method could be practically useful to detect
 bipartite mixed-state entanglement for large numbers of qubits available in
 today's quantum platforms.
+
+
+## Chimie
+
+### Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2306.17159)
+
+**Date de publication :** 29/06/2023
+
+**Auteur(s) :**
+- César Feniou
+- Baptiste Claudon
+- Muhammad Hassan
+- Axel Courtat
+- Olivier Adjoua
+- Yvon Maday
+- Jean-Philip Piquemal
+
+**Résumé :**
+Hybrid quantum-classical adaptive Variational Quantum Eigensolvers (VQE) already hold the potential to outperform classical computing for simulating quantum many-body systems. However, their practical implementation on current quantum processing units (QPUs) is very challenging due to the noisy evaluation of a polynomially scaling number of observables, undertaken for operator selection and optimisation of a high-dimensional cost function. To overcome this, we propose new techniques to execute adaptive algorithms on a 25-qubit error-mitigated QPU coupled to a GPU-accelerated HPC simulator. Targeting physics applications, we compute the ground state of a 25-body Ising model using the newly introduced Greedy Gradient-free Adaptive VQE (CGA-VQE) requiring only five circuit measurements per iteration, regardless of the number of qubits and size of the operator pool. Towards chemistry, we combine the GGA-VQE and Overlap-ADAPT-VQE algorithms to approximate a molecular system ground state. We show that the QPU successfully executes the algorithms and yields the correct choice of parametrised unitary operators. While the QPU evaluation of the resulting ansatz wave-function is polluted by hardware noise, a single final evaluation of the sought-after observables on a classical GPU-accelerated/noiseless simulator allows the recovery of the correct approximation of the ground state, thus highlighting the need for hybrid quantum-classical observable measurement.
+
+### Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2301.10196)
+
+**Date de publication :** 24/01/2023
+
+**Auteur(s) :**
+- César Feniou
+- Muhammad Hassan
+- Diata Traoré
+- Emmanuel Giner
+- Yvon Maday
+- Jean-Philip Piquemal
+
+**Résumé :**
+ADAPT-VQE is a robust algorithm for hybrid quantum-classical simulations of quantum chemical systems on near-term quantum computers. While its iterative process systematically reaches the ground state energy, ADAPT-VQE is sensitive to local energy minima, leading to over-parameterized ansätze. We introduce the Overlap-ADAPT-VQE to grow wave-functions by maximizing their overlap with any intermediate target wave-function that already captures some electronic correlation. By avoiding building the ansatz in the energy landscape strewn with local minima, the Overlap-ADAPT-VQE produces ultra-compact ansätze suitable for high-accuracy initializations of a new ADAPT procedure. Spectacular advantages over ADAPT-VQE are observed for strongly correlated systems including massive savings in circuit depth. Since this compression strategy can also be initialized with accurate Selected-Configuration Interaction (SCI) classical target wave-functions, it paves the way for chemically accurate simulations of larger systems, and strengthens the promise of decisively surpassing classical quantum chemistry through the power of quantum computing. 
+
+### Sparse Quantum State Preparation for Strongly Correlated Systems
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2311.03347)
+
+**Date de publication :** 06/11/2023
+
+**Auteur(s) :**
+- César Feniou
+- Olivier Adjoua
+- Baptiste Claudon
+- Julien Zylberman
+- Emmanuel Giner
+- Jean-Philip Piquemal
+
+**Résumé :**
+Quantum Computing allows, in principle, the encoding of the exponentially scaling many-electron wave function onto a linearly scaling qubit register, offering a promising solution to overcome the limitations of traditional quantum chemistry methods. An essential requirement for ground state quantum algorithms to be practical is the initialisation of the qubits to a high-quality approximation of the sought-after ground state. Quantum State Preparation (QSP) allows the preparation of approximate eigenstates obtained from classical calculations, but it is frequently treated as an oracle in quantum information. In this study, we conduct QSP on the ground state of prototypical strongly correlated systems, up to 28 qubits, using the Hyperion GPU-accelerated state-vector emulator. Various variational and non-variational methods are compared in terms of their circuit depth and classical complexity. Our results indicate that the recently developed Overlap-ADAPT-VQE algorithm offers the most advantageous performance for near-term applications. 
+
+### Dilute measurement-induced cooling into many-body ground states
+
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2311.05258)
+
+**Date de publication :** 09/11/2023
+
+**Auteur(s) :**
+- Josias Langbehn
+- Kyrylo Snizhko
+- Igor Gornyi
+- Giovanna Morigi
+- Yuval Gefen
+- Christiane P. Koch
+
+**Résumé :**
+Cooling a quantum system to its ground state is important for the characterization of non-trivial interacting systems, and in the context of a variety of quantum information platforms. In principle, this can be achieved by employing measurement-based passive steering protocols, where the steering steps are predetermined and are not based on measurement readouts. However, measurements, i.e., coupling the system to auxiliary quantum degrees of freedom, is rather costly, and protocols in which the number of measurements scales with system size will have limited practical applicability. Here, we identify conditions under which measurement-based cooling protocols can be taken to the dilute limit. For two examples of frustration-free one-dimensional spin chains, we show that steering on a single link is sufficient to cool these systems into their unique ground states. We corroborate our analytical arguments with finite-size numerical simulations and discuss further applications. 
+
 
 ## Machine learning/optimisation
 
@@ -744,339 +1097,62 @@ a robust superpolynomial quantum advantage for a sampling problem implemented
 on a constant depth circuit with a single round of measurement and
 feed-forward.
 
+### Unifying Quantum Verification and Error-Detection: Theory and Tools for Optimisations
 
-## Chimie
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2206.00631)
 
-### Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer
-
-**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2306.17159)
-
-**Date de publication :** 29/06/2023
+**Date de publication :** 01/06/2022
 
 **Auteur(s) :**
-- César Feniou
-- Baptiste Claudon
-- Muhammad Hassan
-- Axel Courtat
-- Olivier Adjoua
-- Yvon Maday
-- Jean-Philip Piquemal
+- Theodoros Kapourniotis
+- Elham Kashefi
+- Dominik Leichtle
+- Luka Music
+- Harold Ollivier
 
 **Résumé :**
-Hybrid quantum-classical adaptive Variational Quantum Eigensolvers (VQE) already hold the potential to outperform classical computing for simulating quantum many-body systems. However, their practical implementation on current quantum processing units (QPUs) is very challenging due to the noisy evaluation of a polynomially scaling number of observables, undertaken for operator selection and optimisation of a high-dimensional cost function. To overcome this, we propose new techniques to execute adaptive algorithms on a 25-qubit error-mitigated QPU coupled to a GPU-accelerated HPC simulator. Targeting physics applications, we compute the ground state of a 25-body Ising model using the newly introduced Greedy Gradient-free Adaptive VQE (CGA-VQE) requiring only five circuit measurements per iteration, regardless of the number of qubits and size of the operator pool. Towards chemistry, we combine the GGA-VQE and Overlap-ADAPT-VQE algorithms to approximate a molecular system ground state. We show that the QPU successfully executes the algorithms and yields the correct choice of parametrised unitary operators. While the QPU evaluation of the resulting ansatz wave-function is polluted by hardware noise, a single final evaluation of the sought-after observables on a classical GPU-accelerated/noiseless simulator allows the recovery of the correct approximation of the ground state, thus highlighting the need for hybrid quantum-classical observable measurement.
+With the advent of cloud-based quantum computing, it has become vital to provide strong guarantees that computations delegated by clients to quantum service providers have been executed faithfully. Secure - blind and verifiable - Delegated Quantum Computing (SDQC) has emerged as one of the key approaches to address this challenge, yet current protocols lack at least one of the following three ingredients: composability, noise-robustness and modularity.
+To tackle this question, our paper lays out the fundamental structure of SDQC protocols, namely mixing two components: the computation which the client would like the server to perform and tests that are designed to detect a server's malicious behaviour. Using this abstraction, our main technical result is a set of sufficient conditions on these components which imply the security and noise-robustness of generic SDQC protocols in the composable Abstract Cryptography framework. This is done by establishing a correspondence between these security properties and the error-detection capabilities of the test computations. Changing the types of tests and how they are mixed with the client's computation automatically yields new SDQC protocols with different security and noise-robustness capabilities.
+This approach thereby provides the desired modularity as our sufficient conditions on test computations simplify the steps required to prove the security of the protocols and allows to focus on the design and optimisation of test rounds to specific situations. We showcase this by systematising the search for improved SDQC protocols for Bounded-error Quantum Polynomial-time computations. The resulting protocols do not require more hardware on the server's side than what is necessary to blindly delegate the computation without verification, and they outperform all previously known results. 
 
-### Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze
+### An Automated Deductive Verification Framework for Circuit-building Quantum Programs
 
-**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2301.10196)
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2003.05841)
 
-**Date de publication :** 24/01/2023
-
-**Auteur(s) :**
-- César Feniou
-- Muhammad Hassan
-- Diata Traoré
-- Emmanuel Giner
-- Yvon Maday
-- Jean-Philip Piquemal
-
-**Résumé :**
-ADAPT-VQE is a robust algorithm for hybrid quantum-classical simulations of quantum chemical systems on near-term quantum computers. While its iterative process systematically reaches the ground state energy, ADAPT-VQE is sensitive to local energy minima, leading to over-parameterized ansätze. We introduce the Overlap-ADAPT-VQE to grow wave-functions by maximizing their overlap with any intermediate target wave-function that already captures some electronic correlation. By avoiding building the ansatz in the energy landscape strewn with local minima, the Overlap-ADAPT-VQE produces ultra-compact ansätze suitable for high-accuracy initializations of a new ADAPT procedure. Spectacular advantages over ADAPT-VQE are observed for strongly correlated systems including massive savings in circuit depth. Since this compression strategy can also be initialized with accurate Selected-Configuration Interaction (SCI) classical target wave-functions, it paves the way for chemically accurate simulations of larger systems, and strengthens the promise of decisively surpassing classical quantum chemistry through the power of quantum computing. 
-
-### Sparse Quantum State Preparation for Strongly Correlated Systems
-
-**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2311.03347)
-
-**Date de publication :** 06/11/2023
-
-**Auteur(s) :**
-- César Feniou
-- Olivier Adjoua
-- Baptiste Claudon
-- Julien Zylberman
-- Emmanuel Giner
-- Jean-Philip Piquemal
-
-**Résumé :**
-Quantum Computing allows, in principle, the encoding of the exponentially scaling many-electron wave function onto a linearly scaling qubit register, offering a promising solution to overcome the limitations of traditional quantum chemistry methods. An essential requirement for ground state quantum algorithms to be practical is the initialisation of the qubits to a high-quality approximation of the sought-after ground state. Quantum State Preparation (QSP) allows the preparation of approximate eigenstates obtained from classical calculations, but it is frequently treated as an oracle in quantum information. In this study, we conduct QSP on the ground state of prototypical strongly correlated systems, up to 28 qubits, using the Hyperion GPU-accelerated state-vector emulator. Various variational and non-variational methods are compared in terms of their circuit depth and classical complexity. Our results indicate that the recently developed Overlap-ADAPT-VQE algorithm offers the most advantageous performance for near-term applications. 
-
-### Dilute measurement-induced cooling into many-body ground states
-
-**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2311.05258)
-
-**Date de publication :** 09/11/2023
-
-**Auteur(s) :**
-- Josias Langbehn
-- Kyrylo Snizhko
-- Igor Gornyi
-- Giovanna Morigi
-- Yuval Gefen
-- Christiane P. Koch
-
-**Résumé :**
-Cooling a quantum system to its ground state is important for the characterization of non-trivial interacting systems, and in the context of a variety of quantum information platforms. In principle, this can be achieved by employing measurement-based passive steering protocols, where the steering steps are predetermined and are not based on measurement readouts. However, measurements, i.e., coupling the system to auxiliary quantum degrees of freedom, is rather costly, and protocols in which the number of measurements scales with system size will have limited practical applicability. Here, we identify conditions under which measurement-based cooling protocols can be taken to the dilute limit. For two examples of frustration-free one-dimensional spin chains, we show that steering on a single link is sufficient to cool these systems into their unique ground states. We corroborate our analytical arguments with finite-size numerical simulations and discuss further applications. 
-
-## Algorithme/circuit
-
-### Formal Methods for Quantum Programs: A Survey
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2109.06493v2)
-
-**Date de publication :** 14/09/2021
+**Date de publication :** 12/03/2020
 
 **Auteur(s) :**
 - Christophe Chareton
 - Sébastien Bardin
-- Dongho Lee
-- Benoît Valiron
-- Renaud Vilmart
-- Zhaowei Xu
+- François Bobot
+- Valentin Perrelle
+- Benoit Valiron
 
-**Résumé :**
-While recent progress in quantum hardware open the door for significant
-speedup in certain key areas (cryptography, biology, chemistry, optimization,
-machine learning, etc), quantum algorithms are still hard to implement right,
-and the validation of such quantum programs is achallenge. Moreover, importing
-the testing and debugging practices at use in classical programming is
-extremely difficult in the quantum case, due to the destructive aspect of
-quantum measurement. As an alternative strategy, formal methods are prone to
-play a decisive role in the emerging field of quantum software. Recent works
-initiate solutions for problems occurring at every stage of the development
-process: high-level program design, implementation, compilation, etc. We review
-the induced challenges for an efficient use of formal methods in quantum
-computing and the current most promising research directions.
+**Résumé :**     
+While recent progress in quantum hardware open the door for significant speedup in certain key areas, quantum algorithms are still hard to implement right, and the validation of such quantum programs is a challenge. Early attempts either suffer from the lack of automation or parametrized reasoning, or target high-level abstract algorithm description languages far from the current de facto consensus of circuit-building quantum programming languages. As a consequence, no significant quantum algorithm implementation has been currently verified in a scale-invariant manner. We propose Qbricks, the first formal verification environment for circuit-building quantum programs, featuring clear separation between code and proof, parametric specifications and proofs, high degree of proof automation and allowing to encode quantum programs in a natural way, i.e. close to textbook style. Qbricks builds on best practice of formal verification for the classical case and tailor them to the quantum case: we bring a new domain-specific circuit-building language for quantum programs, namely Qbricks-DSL, together with a new logical specification language Qbricks-Spec and a dedicated Hoare-style deductive verification rule named Hybrid Quantum Hoare Logic. Especially, we introduce and intensively build upon HOPS, a higher-order extension of the recent path-sum symbolic representation, used for both specification and automation. To illustrate the opportunity of Qbricks, we implement the first verified parametric implementations of several famous and non-trivial quantum algorithms, including the quantum part of Shor integer factoring (Order Finding - Shor-OF), quantum phase estimation (QPE) - a basic building block of many quantum algorithms, and Grover search. These breakthroughs were amply facilitated by the specification and automated deduction principles introduced within Qbricks. 
 
-### Optimal Hadamard gate count for Clifford$+T$ synthesis of Pauli rotations sequences
+## Calcul hybride
 
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2302.07040v3)
+[A pragma based C++ framework for hybrid quantum/classical computation](#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation)
 
-**Date de publication :** 14/02/2023
+[Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer](#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer)
 
-**Auteur(s) :**
-- Vivien Vandaele
-- Simon Martiel
-- Simon Perdrix
-- Christophe Vuillot
+[Qimaera: Type-safe (Variational) Quantum Programming in Idris](#qimaera:-type-safe-variational-quantum-programming-in-idris)
 
-**Résumé :**
-The Clifford$+T$ gate set is commonly used to perform universal quantum
-computation. In such setup the $T$ gate is typically much more expensive to
-implement in a fault-tolerant way than Clifford gates. To improve the
-feasibility of fault-tolerant quantum computing it is then crucial to minimize
-the number of $T$ gates. Many algorithms, yielding effective results, have been
-designed to address this problem. It has been demonstrated that performing a
-pre-processing step consisting of reducing the number of Hadamard gates in the
-circuit can help to exploit the full potential of these algorithms and thereby
-lead to a substantial $T$-count reduction. Moreover, minimizing the number of
-Hadamard gates also restrains the number of additional qubits and operations
-resulting from the gadgetization of Hadamard gates, a procedure used by some
-compilers to further reduce the number of $T$ gates. In this work we tackle the
-Hadamard gate reduction problem, and propose an algorithm for synthesizing a
-sequence of $\pi/4$ Pauli rotations with a minimal number of Hadamard gates.
-Based on this result, we present an algorithm which optimally minimizes the
-number of Hadamard gates lying between the first and the last $T$ gate of the
-circuit.
+[Formal Methods for Quantum Programs: A Survey](#formal-methods-for-quantum-programs-a-survey)
 
-### On the Hardness of Analyzing Quantum Programs Quantitatively
+[Overlap-ADAPT-VQE: Practical Quantum Chemistry on Quantum Computers via Overlap-Guided Compact Ansätze](#overlap-adapt-vqe-practical-quantum-chemistry-on-quantum-computers-via-overlap-guided-compact-ansatze)
 
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2312.13657v1)
+[Quantum Expectation Transformers for Cost Analysis](#quantum-expectation-transformers-for-cost-analysis)
 
-**Date de publication :** 21/12/2023
+[Many-body entropies and entanglement from polynomially-many local measurements](#many-body-entropies-and-entanglement-from-polynomially-many-local-measurements)
 
-**Auteur(s) :**
-- Martin Avanzini
-- Georg Moser
-- Romain Péchoux
-- Simon Perdrix
+[Information-theoretic generalization bounds for learning from quantum data](#information-theoretic-generalization-bounds-for-learning-from-quantum-data)
 
-**Résumé :**
-In this paper, we study quantitative properties of quantum programs.
-Properties of interest include (positive) almost-sure termination, expected
-runtime or expected cost, that is, for example, the expected number of
-applications of a given quantum gate, etc. After studying the completeness of
-these problems in the arithmetical hierarchy over the Clifford+T fragment of
-quantum mechanics, we express these problems using a variation of a quantum
-pre-expectation transformer, a weakest precondition based technique that allows
-to symbolically compute these quantitative properties. Under a smooth
-restriction-a restriction to polynomials of bounded degree over a real closed
-field-we show that the quantitative problem, which consists in finding an
-upper-bound to the pre-expectation, can be decided in time double-exponential
-in the size of a program, thus providing, despite its great complexity, one of
-the first decidable results on the analysis and verification of quantum
-programs. Finally, we sketch how the latter can be transformed into an
-efficient synthesis method.
+[Provably Efficient Learning of Phases of Matter via Dissipative Evolutions](#provably-efficient-learning-of-phases-of-matter-via-dissipative-evolutions)
 
-### Completeness of Sum-Over-Paths for Toffoli-Hadamard and the Dyadic Fragments of Quantum Computation
+[Trainability and Expressivity of Hamming-Weight Preserving Quantum Circuits for Machine Learning](#trainability-and-expressivity-of-hamming-weight-preserving-quantum-circuits-for-machine-learning)
 
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2205.02600v2)
+[Robust sparse IQP sampling in constant depth](#robust-sparse-iqp-sampling-in-constant-depth)
 
-**Date de publication :** 05/05/2022
-
-**Auteur(s) :**
-- Renaud Vilmart
-
-**Résumé :**
-The "Sum-Over-Paths" formalism is a way to symbolically manipulate linear
-maps that describe quantum systems, and is a tool that is used in formal
-verification of such systems. We give here a new set of rewrite rules for the
-formalism, and show that it is complete for "Toffoli-Hadamard", the simplest
-approximately universal fragment of quantum mechanics. We show that the
-rewriting is terminating, but not confluent (which is expected from the
-universality of the fragment). We do so using the connection between
-Sum-over-Paths and graphical language ZH-Calculus, and also show how the
-axiomatisation translates into the latter. Finally, we show how to enrich the
-rewrite system to reach completeness for the dyadic fragments of quantum
-computation -- obtained by adding phase gates with dyadic multiples of $\pi$ to
-the Toffoli-Hadamard gate-set -- used in particular in the Quantum Fourier
-Transform.
-
-### Rewriting and Completeness of Sum-Over-Paths in Dyadic Fragments of Quantum Computing
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2307.14223v4)
-
-**Date de publication :** 26/07/2023
-
-**Auteur(s) :**
-- Renaud Vilmart
-
-**Résumé :**
-The "Sum-Over-Paths" formalism is a way to symbolically manipulate linear
-maps that describe quantum systems, and is a tool that is used in formal
-verification of such systems. We give here a new set of rewrite rules for the
-formalism, and show that it is complete for "Toffoli-Hadamard", the simplest
-approximately universal fragment of quantum mechanics. We show that the
-rewriting is terminating, but not confluent (which is expected from the
-universality of the fragment). We do so using the connection between
-Sum-over-Paths and graphical language ZH-calculus, and also show how the
-axiomatisation translates into the latter. We provide generalisations of the
-presented rewrite rules, that can prove useful when trying to reduce terms in
-practice, and we show how to graphically make sense of these new rules. We show
-how to enrich the rewrite system to reach completeness for the dyadic fragments
-of quantum computation, used in particular in the Quantum Fourier Transform,
-and obtained by adding phase gates with dyadic multiples of $\pi$ to the
-Toffoli-Hadamard gate-set. Finally, we show how to perform sums and
-concatenation of arbitrary terms, something which is not native in a system
-designed for analysing gate-based quantum computation, but necessary when
-considering Hamiltonian-based quantum computation.
-
-### A Complete Equational Theory for Quantum Circuits
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2206.10577v2)
-
-**Date de publication :** 21/06/2022
-
-**Auteur(s) :**
-- Alexandre Clément
-- Nicolas Heurtel
-- Shane Mansfield
-- Simon Perdrix
-- Benoît Valiron
-
-**Résumé :**
-We introduce the first complete equational theory for quantum circuits. More
-precisely, we introduce a set of circuit equations that we prove to be sound
-and complete: two circuits represent the same unitary map if and only if they
-can be transformed one into the other using the equations. The proof is based
-on the properties of multi-controlled gates -- that are defined using
-elementary gates -- together with an encoding of quantum circuits into linear
-optical circuits, which have been proved to have a complete axiomatisation.
-
-### Quantum Circuit Completeness: Extensions and Simplifications
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2303.03117v3)
-
-**Date de publication :** 06/03/2023
-
-**Auteur(s) :**
-- Alexandre Clément
-- Noé Delorme
-- Simon Perdrix
-- Renaud Vilmart
-
-**Résumé :**
-Although quantum circuits have been ubiquitous for decades in quantum
-computing, the first complete equational theory for quantum circuits has only
-recently been introduced. Completeness guarantees that any true equation on
-quantum circuits can be derived from the equational theory. We improve this
-completeness result in two ways: (i) We simplify the equational theory by
-proving that several rules can be derived from the remaining ones. In
-particular, two out of the three most intricate rules are removed, the third
-one being slightly simplified. (ii) The complete equational theory can be
-extended to quantum circuits with ancillae or qubit discarding, to represent
-respectively quantum computations using an additional workspace, and hybrid
-quantum computations. We show that the remaining intricate rule can be greatly
-simplified in these more expressive settings, leading to equational theories
-where all equations act on a bounded number of qubits. The development of
-simple and complete equational theories for expressive quantum circuit models
-opens new avenues for reasoning about quantum circuits. It provides strong
-formal foundations for various compiling tasks such as circuit optimisation,
-hardware constraint satisfaction and verification.
-
-### A Curry-Howard Correspondence for Linear, Reversible Computation
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2302.11887v3)
-
-**Date de publication :** 23/02/2023
-
-**Auteur(s) :**
-- Kostia Chardonnet
-- Alexis Saurin
-- Benoît Valiron
-
-**Résumé :**
-In this paper, we present a linear and reversible programming language with
-inductives types and recursion. The semantics of the languages is based on
-pattern-matching; we show how ensuring syntactical exhaustivity and
-non-overlapping of clauses is enough to ensure reversibility. The language
-allows to represent any Primitive Recursive Function. We then give a
-Curry-Howard correspondence with the logic $\mu$MALL: linear logic extended
-with least fixed points allowing inductive statements. The critical part of our
-work is to show how primitive recursion yields circular proofs that satisfy
-$\mu$MALL validity criterion and how the language simulates the cut-elimination
-procedure of $\mu$MALL.
-
-### Proceedings of the Twentieth International Conference on Quantum Physics and Logic
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2308.15489v2)
-
-**Date de publication :** 23/08/2023
-
-**Auteur(s) :**
-- Shane Mansfield
-- Benoît Valiron
-- Vladimir Zamdzhiev
-
-**Résumé :**
-This volume contains the proceedings of the 20th International Conference on
-Quantum Physics and Logic (QPL 2023). The aim of the QPL conference series is
-to bring together academic and industry researchers working on mathematical
-foundations of quantum computation, quantum physics, and related areas. The
-main focus is on the use of algebraic and categorical structures, formal
-languages, type systems, semantic methods, as well as other mathematical and
-computer scientific techniques applicable to the study of physical systems,
-physical processes, and their composition.
-
-### Minimal Equational Theories for Quantum Circuits
-
-**Lien de l'article :** [ArXiv](http://arxiv.org/abs/2311.07476v2)
-
-**Date de publication :** 13/11/2023
-
-**Auteur(s) :**
-- Alexandre Clément
-- Noé Delorme
-- Simon Perdrix
-
-**Résumé :**
-We introduce the first minimal and complete equational theory for quantum
-circuits. Hence, we show that any true equation on quantum circuits can be
-derived from simple rules, all of them being standard except a novel but
-intuitive one which states that a multi-control $2\pi$ rotation is nothing but
-the identity. Our work improves on the recent complete equational theories for
-quantum circuits, by getting rid of several rules including a fairly
-impractical one. One of our main contributions is to prove the minimality of
-the equational theory, i.e. none of the rules can be derived from the other
-ones. More generally, we demonstrate that any complete equational theory on
-quantum circuits (when all gates are unitary) requires rules acting on an
-unbounded number of qubits. Finally, we also simplify the complete equational
-theories for quantum circuits with ancillary qubits and/or qubit discarding.
+[Sparse Quantum State Preparation for Strongly Correlated Systems](#sparse-quantum-state-preparation-for-strongly-correlated-systems)

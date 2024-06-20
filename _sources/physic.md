@@ -1,1 +1,0 @@
-# Résolution de problème de physique

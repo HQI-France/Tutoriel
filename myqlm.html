@@ -240,37 +240,6 @@
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://jupyterhub.ijclab.in2p3.fr/hub/user-redirect/git-pull?repo=https%3A//github.com/executablebooks/jupyter-book&urlpath=tree/jupyter-book/myqlm.ipynb&branch=master" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="btn__text-container">JupyterHub</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
@@ -350,7 +319,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -366,6 +337,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#etat-de-bell-qpu-pylinalg">Etat de Bell (QPU: PyLinalg)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#max-cut-qpu-simulatedannealing">Max-cut (QPU: SimulatedAnnealing)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -376,9 +356,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="qaptiva">
-<h1><a class="reference external" href="https://myqlm.github.io/">Qaptiva</a><a class="headerlink" href="#qaptiva" title="Lien vers cette rubrique">#</a></h1>
-<p>TODO : EMULER SUR QAPTIVA AVEC LA MACHINE</p>
-<p>Plateforme quantique développé par Eviden, Qaptiva propose dès aujourd’hui un grand nombre d’outils permettant d’émuler des circuits et algorithmes quantiques. Dans le cadre de HQI, vous pouvez utiliser la puissance de calcul des machines QLM installés TGCC pour vos travaux</p>
+<h1>Qaptiva<a class="headerlink" href="#qaptiva" title="Lien vers cette rubrique">#</a></h1>
+<section id="etat-de-bell-qpu-pylinalg">
+<h2>Etat de Bell (QPU: PyLinalg)<a class="headerlink" href="#etat-de-bell-qpu-pylinalg" title="Lien vers cette rubrique">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qat.lang</span> <span class="kn">import</span> <span class="n">Program</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">CNOT</span>
@@ -401,7 +381,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qat.lang.AQASM.program.Program at 0x7f4b2a477970&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qat.lang.AQASM.program.Program at 0x7f6bd992ee90&gt;
 </pre></div>
 </div>
 </div>
@@ -411,9 +391,9 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span> <span class="o">=</span> <span class="n">qprog</span><span class="o">.</span><span class="n">to_circ</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">qat.qpus</span> <span class="kn">import</span> <span class="n">get_default_qpu</span>
+<span class="kn">from</span> <span class="nn">qat.qpus</span> <span class="kn">import</span> <span class="n">PyLinalg</span>
 
-<span class="n">qpu</span> <span class="o">=</span> <span class="n">get_default_qpu</span><span class="p">()</span>
+<span class="n">qpu</span> <span class="o">=</span> <span class="n">PyLinalg</span><span class="p">()</span>
 <span class="n">job</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">to_job</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">qpu</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
 </pre></div>
@@ -449,6 +429,95 @@ State |11&gt; amplitude (0.7071067811865475+0j)
 }
 ]]></style></defs><text style="font-family: STIXMathJax_Main-Italic; font-size: 16px;" x="10" y="37">Q0</text><line stroke="rgb(0,0,0)" x1="50" x2="149" y1="32" y2="32" /><text style="font-family: STIXMathJax_Main-Italic; font-size: 16px;" x="10" y="69">Q1</text><line stroke="rgb(0,0,0)" x1="50" x2="149" y1="64" y2="64" /><rect fill="white" height="24" stroke="black" stroke-width="2" width="29" x="60" y="20" /><text style="font-family: STIXMathJax_Main-Italic; font-size: 16px;" x="68" y="37">H</text><line stroke="rgb(0,0,0)" x1="115" x2="115" y1="64" y2="32" /><circle cx="115" cy="32" fill="black" r="4" /><g><circle cx="115" cy="64" fill="white" r="8" stroke="black" stroke-width="1" /><line stroke="rgb(0,0,0)" x1="107" x2="123" y1="64" y2="64" /><line stroke="rgb(0,0,0)" x1="115" x2="115" y1="56" y2="72" /></g></svg></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qat.qpus</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;qat.qpus namespace:&quot;</span><span class="p">,</span> <span class="nb">dir</span><span class="p">(</span><span class="n">qat</span><span class="o">.</span><span class="n">qpus</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>qat.qpus namespace: [&#39;CLinalg&#39;, &#39;ClassicalQPU&#39;, &#39;PyLinalg&#39;, &#39;QPUHandler&#39;, &#39;RemoteQPU&#39;, &#39;SimulatedAnnealing&#39;, &#39;get_current_qpu&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="max-cut-qpu-simulatedannealing">
+<h2>Max-cut (QPU: SimulatedAnnealing)<a class="headerlink" href="#max-cut-qpu-simulatedannealing" title="Lien vers cette rubrique">#</a></h2>
+<p>Nous allons maintenant résoudre un problème Max-cut sur un graph de 100 noeuds.
+Ce graph est constitué de noeuds et d’arêtes. L’objectif du problème Max-cut est de partitionner le graph en deux sous-graph reliés par le plus grand nombres d’arêtes possible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">full_rary_tree</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">nodes_positions</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> 
+                 <span class="n">pos</span><span class="o">=</span><span class="n">nodes_positions</span><span class="p">,</span> 
+                 <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#4EEA6A&#39;</span><span class="p">,</span> 
+                 <span class="n">node_size</span><span class="o">=</span><span class="mi">440</span><span class="p">,</span> 
+                 <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/237d0c22353b31e17791e4e54f3ae9e5262ba3c3db0f2a2401ca4140dbdbfe12.png" src="_images/237d0c22353b31e17791e4e54f3ae9e5262ba3c3db0f2a2401ca4140dbdbfe12.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qat.opt</span> <span class="kn">import</span> <span class="n">MaxCut</span>
+
+<span class="n">max_cut_problem</span> <span class="o">=</span> <span class="n">MaxCut</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qat.generators</span> <span class="kn">import</span> <span class="n">MaxCutGenerator</span>
+<span class="kn">from</span> <span class="nn">qat.qpus</span> <span class="kn">import</span> <span class="n">SimulatedAnnealing</span>
+<span class="kn">from</span> <span class="nn">qat.core</span> <span class="kn">import</span> <span class="n">Variable</span>
+
+<span class="c1"># 1. Extract parameters for SA</span>
+<span class="n">problem_parameters_dict</span> <span class="o">=</span> <span class="n">max_cut_problem</span><span class="o">.</span><span class="n">get_best_parameters</span><span class="p">()</span>
+<span class="n">n_steps</span> <span class="o">=</span> <span class="n">problem_parameters_dict</span><span class="p">[</span><span class="s2">&quot;n_steps&quot;</span><span class="p">]</span>
+<span class="n">temp_max</span> <span class="o">=</span> <span class="n">problem_parameters_dict</span><span class="p">[</span><span class="s2">&quot;temp_max&quot;</span><span class="p">]</span>
+<span class="n">temp_min</span> <span class="o">=</span> <span class="n">problem_parameters_dict</span><span class="p">[</span><span class="s2">&quot;temp_min&quot;</span><span class="p">]</span>
+
+<span class="c1"># 2. Create a temperature schedule and a QPU</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="n">temp_t</span> <span class="o">=</span> <span class="n">temp_min</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="n">tmax</span><span class="p">)</span> <span class="o">+</span> <span class="n">temp_max</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">/</span> <span class="n">tmax</span><span class="p">)</span>
+
+<span class="n">max_cut_application</span> <span class="o">=</span> <span class="n">MaxCutGenerator</span><span class="p">(</span><span class="n">job_type</span><span class="o">=</span><span class="s2">&quot;annealing&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="n">SimulatedAnnealing</span><span class="p">(</span><span class="n">temp_t</span><span class="o">=</span><span class="n">temp_t</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="n">n_steps</span><span class="p">)</span>
+<span class="n">combinatorial_result</span> <span class="o">=</span> <span class="n">max_cut_application</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The nodes in the first subgraph are&quot;</span><span class="p">,</span> <span class="n">combinatorial_result</span><span class="o">.</span><span class="n">subsets</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The nodes in the second subgraph are&quot;</span><span class="p">,</span> <span class="n">combinatorial_result</span><span class="o">.</span><span class="n">subsets</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># The cost here is negative since all combinatorial optimization problems are defined as a minimization problem, so a factor of -1 is needed</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of edges that are cut is&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">combinatorial_result</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
+
+<span class="n">combinatorial_result</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">with_figure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">440</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nodes_positions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The nodes in the first subgraph are [0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+The nodes in the second subgraph are [1, 2, 3, 4]
+The number of edges that are cut is 19.0
+</pre></div>
+</div>
+<img alt="_images/1b0d4a6b4197e05a84640d02d4722311a4469d5575263f3d2dc18ae7437b0d89.png" src="_images/1b0d4a6b4197e05a84640d02d4722311a4469d5575263f3d2dc18ae7437b0d89.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -506,7 +575,21 @@ State |11&gt; amplitude (0.7071067811865475+0j)
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#etat-de-bell-qpu-pylinalg">Etat de Bell (QPU: PyLinalg)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#max-cut-qpu-simulatedannealing">Max-cut (QPU: SimulatedAnnealing)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
