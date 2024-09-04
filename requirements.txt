@@ -1,0 +1,7 @@
+matplotlib==3.7.5
+networkx==3.3
+numpy==1.26.4
+pulser==0.18.0
+pulser_core==0.18.0
+pulser_simulation==0.18.0
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1025.0" height="406.25" viewBox="-25 0 820.0 325.0">
+<defs>
+</defs>
+<path d="M10,25 L25,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,75 L25,75" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,125 L25,125" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M10,175 L25,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M25,25 L53,25 L72,44" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M78,44 L97,25 L125,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,75 L53,75 L72,56" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M78,56 L97,75 L125,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M50,43 L100,43 L100,57 L50,57 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="75" y="85" font-size="7" text-anchor="middle"></text>
+<text x="75" y="26" font-size="7" text-anchor="middle"></text>
+<path d="M50,43 L100,43 L100,47 L50,47 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M93,50 L103,50 L103,60 L93,60 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="98" y="57" font-size="6" text-anchor="middle">H</text>
+<path d="M25,125 L125,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M25,175 L125,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M127,2 L723,2 L723,298 L127,298 Z" stroke="black" fill="lightblue" stroke-dasharray="1,2" stroke-linejoin="miter" />
+<text x="129" y="305" font-size="8" text-anchor="start">HERALDED CNOT</text>
+<path d="M125,125 L153,125 L172,144" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M178,144 L197,125 L225,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M125,175 L153,175 L172,156" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M178,156 L197,175 L225,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M150,143 L200,143 L200,157 L150,157 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="175" y="185" font-size="7" text-anchor="middle"></text>
+<text x="175" y="126" font-size="7" text-anchor="middle"></text>
+<path d="M150,143 L200,143 L200,147 L150,147 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M193,150 L203,150 L203,160 L193,160 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="198" y="157" font-size="6" text-anchor="middle">H</text>
+<path d="M125,75 L225,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M228,75 L272,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M225,75 L228,75 L272,125 L275,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M228,125 L272,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M225,125 L228,125 L272,75 L275,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M275,125 L325,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M280,140 L289,140 L303,110 L294,110 L280,140 L289,140 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<text x="297" y="138" font-size="7" text-anchor="start">Φ=pi</text>
+<path d="M275,275 L325,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M280,290 L289,290 L303,260 L294,260 L280,290 L289,290 Z" stroke="black" fill="gray" stroke-linejoin="miter" />
+<text x="297" y="288" font-size="7" text-anchor="start">Φ=pi</text>
+<path d="M225,175 L275,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M278,175 L322,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M275,175 L278,175 L322,225 L325,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M325,125 L353,125 L372,144" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,144 L397,125 L425,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M325,175 L353,175 L372,156" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,156 L397,175 L425,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M350,143 L400,143 L400,157 L350,157 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="375" y="180" font-size="7" text-anchor="middle"></text>
+<text x="375" y="126" font-size="7" text-anchor="middle">Θ=1.910786</text>
+<path d="M350,143 L400,143 L400,147 L350,147 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M393,150 L403,150 L403,160 L393,160 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="398" y="157" font-size="6" text-anchor="middle">H</text>
+<path d="M325,225 L353,225 L372,244" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,244 L397,225 L425,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M325,275 L353,275 L372,256" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M378,256 L397,275 L425,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M350,243 L400,243 L400,257 L350,257 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="375" y="280" font-size="7" text-anchor="middle"></text>
+<text x="375" y="226" font-size="7" text-anchor="middle">Θ=1.910786</text>
+<path d="M350,243 L400,243 L400,247 L350,247 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M393,250 L403,250 L403,260 L393,260 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="398" y="257" font-size="6" text-anchor="middle">H</text>
+<path d="M428,175 L472,225" stroke="white" stroke-width="6" fill="none" />
+<path d="M425,175 L428,175 L472,225 L475,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M428,225 L472,175" stroke="white" stroke-width="6" fill="none" />
+<path d="M425,225 L428,225 L472,175 L475,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M425,125 L475,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M475,125 L503,125 L522,144" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,144 L547,125 L575,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M475,175 L503,175 L522,156" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,156 L547,175 L575,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M500,143 L550,143 L550,157 L500,157 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="525" y="180" font-size="7" text-anchor="middle"></text>
+<text x="525" y="126" font-size="7" text-anchor="middle">Θ=10.655584</text>
+<path d="M500,143 L550,143 L550,147 L500,147 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M543,150 L553,150 L553,160 L543,160 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="548" y="157" font-size="6" text-anchor="middle">H</text>
+<path d="M425,275 L475,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M475,225 L503,225 L522,244" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,244 L547,225 L575,225" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M475,275 L503,275 L522,256" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M528,256 L547,275 L575,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M500,243 L550,243 L550,257 L500,257 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="525" y="280" font-size="7" text-anchor="middle"></text>
+<text x="525" y="226" font-size="7" text-anchor="middle">Θ=0.615403</text>
+<path d="M500,243 L550,243 L550,247 L500,247 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M543,250 L553,250 L553,260 L543,260 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="548" y="257" font-size="6" text-anchor="middle">H</text>
+<path d="M275,75 L575,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M578,75 L622,125" stroke="white" stroke-width="6" fill="none" />
+<path d="M575,75 L578,75 L622,125 L625,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M578,125 L622,75" stroke="white" stroke-width="6" fill="none" />
+<path d="M575,125 L578,125 L622,75 L625,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,175 L625,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M625,125 L653,125 L672,144" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,144 L697,125 L725,125" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M625,175 L653,175 L672,156" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M678,156 L697,175 L725,175" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M650,143 L700,143 L700,157 L650,157 Z" stroke="black" fill="black" stroke-linejoin="miter" />
+<text x="675" y="185" font-size="7" text-anchor="middle"></text>
+<text x="675" y="126" font-size="7" text-anchor="middle"></text>
+<path d="M650,143 L700,143 L700,147 L650,147 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<path d="M693,150 L703,150 L703,160 L693,160 Z" stroke="black" fill="aquamarine" stroke-linejoin="miter" />
+<text x="698" y="157" font-size="6" text-anchor="middle">H</text>
+<path d="M125,25 L725,25" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M625,75 L725,75" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M575,275 L725,275" stroke="darkred" stroke-width="3" fill="none" />
+<path d="M725,25 L740,25" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M725,75 L740,75" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M725,125 L740,125" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M725,175 L740,175" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M725,275 L740,275" stroke-width="3" stroke="darkred" stroke-linejoin="miter" fill="none" />
+<path d="M307,175 C307,175,307,165,317,165 L325,165 L325,185 L317,185 C307,185,307,175,307,175 L307,175" stroke-width="1" stroke="black" stroke-linejoin="miter" fill="white" />
+<text x="313" y="191" font-size="6" text-anchor="middle" font-style="italic">[herald0]</text>
+<text x="317" y="178" font-size="7" text-anchor="middle">1</text>
+<path d="M257,275 C257,275,257,265,267,265 L275,265 L275,285 L267,285 C257,285,257,275,257,275 L257,275" stroke-width="1" stroke="black" stroke-linejoin="miter" fill="white" />
+<text x="263" y="291" font-size="6" text-anchor="middle" font-style="italic">[herald1]</text>
+<text x="267" y="278" font-size="7" text-anchor="middle">1</text>
+<path d="M740,15 L752,15 L752,85 L740,85 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<text x="746" y="27" font-size="7" text-anchor="middle">0</text>
+<text x="746" y="77" font-size="7" text-anchor="middle">1</text>
+<text x="752" y="91" font-size="6" text-anchor="end" font-style="italic">[ctrl]</text>
+<path d="M740,115 L752,115 L752,185 L740,185 Z" stroke="black" fill="lightgray" stroke-linejoin="miter" />
+<text x="746" y="127" font-size="7" text-anchor="middle">2</text>
+<text x="746" y="177" font-size="7" text-anchor="middle">3</text>
+<text x="752" y="191" font-size="6" text-anchor="end" font-style="italic">[data]</text>
+<path d="M583,235 L575,235 L575,215 L583,215 C583,215,593,215,593,225 C593,235,583,235,583,235 L583,235" stroke-width="1" stroke="black" stroke-linejoin="miter" fill="white" />
+<text x="588" y="241" font-size="6" text-anchor="middle" font-style="italic">[herald0]</text>
+<text x="583" y="228" font-size="7" text-anchor="middle">1</text>
+<path d="M733,285 L725,285 L725,265 L733,265 C733,265,743,265,743,275 C743,285,733,285,733,285 L733,285" stroke-width="1" stroke="black" stroke-linejoin="miter" fill="white" />
+<text x="738" y="291" font-size="6" text-anchor="middle" font-style="italic">[herald1]</text>
+<text x="733" y="278" font-size="7" text-anchor="middle">1</text>
+</svg>

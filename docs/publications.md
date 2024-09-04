@@ -3,7 +3,7 @@
  Ce document présente une liste de publications ayant bénéficié du programme HQI.
 
   ```{important} 
- La plupart des publications sont référencées sur le portail <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0002&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-R&D Support</a> et <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0001&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-Acquisition</a>. Cependant, certaines publications étant mal référencées, vous trouverez ici les preprints ArXiV.
+ La plupart des publications sont référencées sur le portail <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0002&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-R&D Support</a> et <a href="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?projet_anr=ANR-22-PNCQ-0001&CB_auteur=oui&CB_titre=oui&CB_DOI=oui&CB_resume=oui&langue=Francais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=../css/VisuCondense.css">HAL HQI-Acquisition</a>. Cependant, certaines publications étant mal référencées, vous trouverez ici les preprints ArXiv.
  ``` 
 
 ## Calcul hybride classique/quantique
@@ -11,6 +11,8 @@
 [A Pragma-Based C Framework for Hybrid Quantum Classical Computation](#a-pragma-based-c-framework-for-hybrid-quantum-classical-computation)
 
 [A tree-approach Pauli decomposition algorithm with application to quantum computing](#a-tree-approach-pauli-decomposition-algorithm-with-application-to-quantum-computing)
+
+[Experimenting with hybrid quantum optimization in HPC software stack for CPU register allocation](#experimenting-with-hybrid-quantum-optimization-in-hpc-software-stack-for-cpu-register-allocation)
 
 [Greedy Gradient-free Adaptive Variational Quantum Algorithms on a Noisy Intermediate Scale Quantum Computer](#greedy-gradient-free-adaptive-variational-quantum-algorithms-on-a-noisy-intermediate-scale-quantum-computer)
 
@@ -330,6 +332,33 @@ This paper specifies the requirements of a hybrid quantum-classical framework co
 **Résumé :**
 The Pauli matrices are 2-by-2 matrices that are very useful in quantum computing. They can be used as elementary gates in quantum circuits but also to decompose any matrix of ℂ^2^n^×2^n^^ as a linear combination of tensor products of the Pauli matrices. However, the computational cost of this decomposition is potentially very expensive since it can be exponential in n. In this paper, we propose an algorithm with a parallel implementation that optimizes this decomposition using a tree approach to avoid redundancy in the computation while using a limited memory footprint. We also explain how some particular matrix structures can be exploited to reduce the number of operations. We provide numerical experiments to evaluate the sequential and parallel performance of our decomposition algorithm and we illustrate how this algorithm can be applied to encode matrices in a quantum memory. 
 
+(experimenting-with-hybrid-quantum-optimization-in-hpc-software-stack-for-cpu-register-allocation)=
+### Experimenting with hybrid quantum optimization in HPC software stack for CPU register allocation
+**Lien de l'article :** [HAL](https://universite-paris-saclay.hal.science/LISN/hal-04272048)
+
+**Date de publication :** 11/09/2023
+
+**Auteur(s) :**
+- Brice Chichereau
+- Stéphane Vialle
+- Patrick Carribault
+
+**Résumé :**
+Quantum computers exploit the particular behavior of quantum physical systems to solve some problems in a different way than classical computers. We are now approaching the point where quantum computing could provide real advantages over classical methods. The computational capabilities of quantum systems will soon be available in future supercomputer architectures as hardware accelerators called Quantum Processing Units (QPU). From optimizing compilers to task scheduling, the High-Performance Computing (HPC) software stack could benefit from the advantages of quantum computing. We look here at the problem of register allocation, a crucial part of modern optimizing compilers. We propose a simple proofof-concept hybrid quantum algorithm based on QAOA to solve this problem. We implement the algorithm and integrate it directly into GCC, a well-known modern compiler. The performance of the algorithm is evaluated against the simple Chaitin-Briggs heuristic as well as GCC's register allocator. While our proposed algorithm lags behind GCC's modern heuristics, it is a good first step in the design of useful quantum algorithms for the classical HPC software stack. 
+
+### Quantum computing with and for many-body physics
+**Lien de l'article :** [ArXiv](https://arxiv.org/abs/2303.04850)
+
+**Date de publication :** 08/03/2023
+
+**Auteur(s) :**
+- Thomas Ayral
+- Pauline Besserve
+- Denis Lacroix
+- Edgar Andres Ruiz Guzman
+
+**Résumé :**
+Quantum computing technologies are making steady progress. This has opened new opportunities for tackling problems whose complexity prevents their description on classical computers. A prototypical example of these complex problems are interacting quantum many-body systems: on the one hand, these systems are known to become rapidly prohibitive to describe using classical computers when their size increases. On the other hand, these systems are precisely those which are used in the laboratory to build quantum computing platforms. This arguably makes them one of the most promising early use cases of quantum computing. In this review, we explain how quantum many-body systems are used to build quantum processors, and how, in turn, current and future quantum processors can be used to describe large many-body systems of fermions such as electrons and nucleons. The review includes an introduction to analog and digital quantum devices, the mapping of Fermi systems and their Hamiltonians onto qubit registers, as well as an overview of methods to access their static and dynamical properties. We also highlight some aspects related to entanglement, and touch on the description, influence and processing of decoherence in quantum devices. 
 
 ## Langage de programmation
 

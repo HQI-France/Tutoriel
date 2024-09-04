@@ -61,7 +61,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'qimaera';</script>
-    <link rel="canonical" href="https://hqi.fr/qimaera.html" />
+    <link rel="canonical" href="https://hqi-france.github.io/qimaera.html" />
     <link rel="icon" href="_static/logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="myqlm.html">Qaptiva</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pulser.html">Pulser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="perceval.html">Perceval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubo.html">Etude de cas QUBO</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Outils</span></p>
 <ul class="current nav bd-sidenav">
@@ -237,6 +238,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/HQI-France/Tutoriel" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Dépôt source"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -359,15 +375,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="qimaera">
 <h1><a class="reference external" href="https://github.com/zamdzhiev/Qimaera">Qimaera</a><a class="headerlink" href="#qimaera" title="Lien vers cette rubrique">#</a></h1>
-<p>Qimaera est un outil de programmation expérimental pour les algorithmes quantiques, conçu pour garantir la correction et la sécurité des programmes grâce aux types dépendants et linéaires d’Idris 2. Il permet de développer des algorithmes quantiques comme QAOA et VQE en s’assurant que les qubits sont manipulés correctement et en détectant les erreurs potentielles à la compilation. Ses principales fonctionnalités incluent la préparation sécurisée des qubits, l’application d’opérations unitaires et la mesure, tout en offrant une intégration fluide entre les calculs classiques et quantiques.</p>
+<p>Qimaera est un outil expérimental de programmation pour les algorithmes quantiques. En tant que proof-of-concept, il démontre qu’il est possible de réaliser une programmation hybride classique-quantique sécurisée avec Idris2. Tout cela est rendu possible grâce à l’utilisation des types dépendants et des types linéaires.</p>
+<div class="note admonition">
+<p class="admonition-title">Les types</p>
+<p>Un <i>type</i> est la nature de valeurs que peut prendre une donnée : booléen, entiers, réels par exemple. Ainsi, un <i>type dépendant</i> est un type qui change selon la valeurs de certains paramètres. Un <i>type linéaire</i> est un type qui admet des propriétés de linéarité comme le principe de non duplication, qui ici, assure le respect des lois de la physique quantique.</p>
+</div>
+<p>Ce projet permet alors la correction et la sécurité des programmes hybride, illustrant que l’on peut manipuler les qubits de manière sécurisée et détecter les erreurs potentielles à la compilation.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Voir également</p>
 <p>L’article des auteurs de Qimaera : <a class="reference external" href="https://arxiv.org/pdf/2111.10867">QType-safe (Variational) Quantum Programming in
-Idris</a>.</p>
+Idris</a>, ainsi que le répertoire <a class="reference external" href="https://github.com/zamdzhiev/Qimaera">Github</a></p>
 </div>
 <section id="idris2">
 <h2>Idris2<a class="headerlink" href="#idris2" title="Lien vers cette rubrique">#</a></h2>
-<p>Idris2 est un langage de programmation fonctionnel avancé conçu pour offrir une vérification formelle rigoureuse grâce à aux types dépendants et linéaires. Ces types permettent de garantir la correction des programmes en vérifiant des propriétés complexes au moment de la compilation. Ce langage est particulièrement adapté aux applications nécessitant une grande fiabilité et sécurité.</p>
+<p>Idris2 est un langage de programmation fonctionnel avancé conçu pour offrir une vérification formelle rigoureuse grâce à aux types dépendants et linéaires. Comme expliqué précedemment, ces types permettent de garantir la correction des programmes en vérifiant des propriétés complexes au moment de la compilation. Idris2 est particulièrement adapté aux applications nécessitant une grande fiabilité et sécurité.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Voir également</p>
 <p>Voir la <a class="reference external" href="https://github.com/idris-lang/Idris2">documentation</a></p>
@@ -375,7 +396,7 @@ Idris</a>.</p>
 </section>
 <section id="exemple-coin-toss-pile-ou-face">
 <h2>Exemple : Coin toss (Pile ou face)<a class="headerlink" href="#exemple-coin-toss-pile-ou-face" title="Lien vers cette rubrique">#</a></h2>
-<p>Dans ce tutoriel, nous allons implémenter un algorithme simple de pile ou face (Coin Toss) en utilisant Qimaera et Idris 2. L’objectif est de créer un programme qui utilise un qubit pour simuler un lancer de pièce équitable.</p>
+<p>Dans ce tutoriel, nous allons implémenter un algorithme simple de pile ou face (Coin Toss) en utilisant Qimaera et Idris 2. L’objectif est de créer un programme qui utilise un qubit et y applique une porte d’Hadamard, pour simuler un lancer de pièce équitable (résultat supposé à 50/50 sur les deux états possibles).</p>
 <div class="highlight-Idris notranslate"><div class="highlight"><pre><span></span><span class="kr">module</span><span class="w"> </span><span class="nn">CoinToss</span>
 
 <span class="kr">import</span><span class="w"> </span><span class="nn">Data.Vect</span>
@@ -384,12 +405,15 @@ Idris</a>.</p>
 <span class="kr">import</span><span class="w"> </span><span class="nn">LinearTypes</span>
 </pre></div>
 </div>
-<p>Après avoir importé les modules, on créé un nouveau qubit dans l’état <span class="math notranslate nohighlight">\(|0\rangle\)</span>.
+<p>Après avoir importé les modules, on créé un nouveau qubit dans l’état
 Ensuite, on applique une porte de Hadamart sur celui-ci, permettant l’état <span class="math notranslate nohighlight">\(|+\rangle\)</span>.
 Finalement, on mesure le qubit et on observe le résultat.</p>
 <div class="highlight-Idris notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span>
 <span class="nf">coin</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">QuantumOp</span><span class="w"> </span>t<span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span><span class="kt">IO</span><span class="w"> </span><span class="kt">Bool</span>
-coin<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kr">do</span>
+</pre></div>
+</div>
+<p>Nous venons de définir notre coin, comme un booléen.</p>
+<div class="highlight-Idris notranslate"><div class="highlight"><pre><span></span>coin<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kr">do</span>
 <span class="w">  </span><span class="ow">[</span>b<span class="ow">]</span><span class="w"> </span><span class="ow">&lt;-</span><span class="w"> </span>run<span class="w"> </span><span class="ow">(</span><span class="kr">do</span>
 <span class="w">           </span>q<span class="w"> </span><span class="ow">&lt;-</span><span class="w"> </span>newQubit<span class="w"> </span><span class="ow">{</span>t<span class="w"> </span><span class="ow">=</span><span class="w"> </span>t<span class="ow">}</span>
 <span class="w">           </span>q<span class="w"> </span><span class="ow">&lt;-</span><span class="w"> </span>applyH<span class="w"> </span>q
@@ -397,11 +421,14 @@ coin<span class="w"> </span><span class="ow">=</span><span class="w"> </span><sp
 <span class="w">           </span>pure<span class="w"> </span>r
 <span class="w">         </span><span class="ow">)</span>
 <span class="w">  </span>pure<span class="w"> </span>b
-
-<span class="nf">testCoin</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">IO</span><span class="w"> </span><span class="kt">Bool</span>
+</pre></div>
+</div>
+<p>Nous initions le qubit dans l’état <span class="math notranslate nohighlight">\(|0\rangle\)</span> et nous appliquons une porte de Hadamard <em>applyH</em>. Puis, nous mesurons son état et retournont un booléen.</p>
+<div class="highlight-Idris notranslate"><div class="highlight"><pre><span></span><span class="nf">testCoin</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">IO</span><span class="w"> </span><span class="kt">Bool</span>
 testCoin<span class="w"> </span><span class="ow">=</span><span class="w"> </span>coin<span class="w"> </span><span class="ow">{</span>t<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">SimulatedOp</span><span class="ow">}</span>
 </pre></div>
 </div>
+<p>Nous pouvons maintenant exécuter la fonction.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Vous pouvez retrouver le fichier Cointoss.idr <a class="reference external" href="https://github.com/zamdzhiev/Qimaera/blob/main/CoinToss.idr">ici</a></p>

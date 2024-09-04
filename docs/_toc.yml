@@ -11,10 +11,10 @@ parts:
       - file: myqlm
       - file: pulser
       - file: perceval
+      - file: qubo
 
   - caption: Outils
     chapters:
       - file: qbricks
       - file: qimaera
       - file: publications
-      #- file: commande
