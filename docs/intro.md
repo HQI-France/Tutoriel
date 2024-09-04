@@ -29,7 +29,7 @@ Il peut aussi servir de module d’hybridation entre calcul HPC et quantique.
 Il s'éxecute grâce à l'environnement [Qaptiva](./myqlm.ipynb).
 
 <center>
-<img src="https://support.bull.com/ols/product/platforms/hw-extremcomp/qaptiva-800" width=70%>
+<img src="image/qaptiva-800.png" width=70%>
 </center>
 <p>© Bull SAS</p>
 
