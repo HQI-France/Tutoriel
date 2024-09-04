@@ -58,13 +58,15 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'qbricks';</script>
-    <link rel="canonical" href="https://hqi.fr/qbricks.html" />
+    <link rel="canonical" href="https://hqi-france.github.io/qbricks.html" />
     <link rel="icon" href="_static/logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Qimaera" href="qimaera.html" />
-    <link rel="prev" title="Perceval" href="perceval.html" />
+    <link rel="prev" title="Etude de cas QUBO" href="qubo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -188,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="myqlm.html">Qaptiva</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pulser.html">Pulser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="perceval.html">Perceval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubo.html">Etude de cas QUBO</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Outils</span></p>
 <ul class="current nav bd-sidenav">
@@ -342,8 +345,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methode-formelle">Méthode formelle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-deutsch-jozsa">Exemple : Deutsch-Jozsa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methode-formelle">Méthode formelle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-proofs">Hello Proofs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prover">Prover</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Vérification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-pile-ou-face-cointoss">Exemple : Pile ou face (Cointoss)</a></li>
 </ul>
             </nav>
         </div>
@@ -358,22 +366,112 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="qbricks">
 <h1><a class="reference external" href="https://qbricks.github.io/">Qbricks</a><a class="headerlink" href="#qbricks" title="Lien vers cette rubrique">#</a></h1>
 <img src="https://user-images.githubusercontent.com/83573296/120336791-fdbf9f00-c2f2-11eb-986b-5116dbe7bb71.png" align="right" alt="drawing" width="350"  >
-<p>Qbricks est un environnement open-source pour la vérification formelle automatisée des programmes quantiques. Il permet d’écrire des programmes de construction de circuits quantiques, spécifiés avec leurs fonctions d’E/S et/ou leurs besoins en ressources. Son langage hôte, l’environnement de vérification déductive Why3, fournit une interface, permettant un haut niveau d’automatisation dans la vérification des spécifications Qbricks.</p>
+<p>Qbricks est un environnement open-source pour la vérification formelle automatisée des programmes quantiques. Il permet d’écrire des programmes de construction de circuits quantiques. Son langage hôte, <a class="reference external" href="https://www.why3.org">Why3</a>, fournit une interface permettant un haut niveau d’automatisation dans la vérification des spécifications Qbricks. Sur cette page, nous détaillerons les différentes spécificités de Why3 et des outils constituant l’environnement.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Voir également</p>
 <p>L’article des auteurs de Qbricks : <a class="reference external" href="https://github.com/Qbricks/qbricks.github.io/files/6414263/final--ESOP-2021.pdf">An Automated Deductive Verification Framework for Circuit-building Quantum Programs</a> et le répertoire <a class="reference external" href="https://github.com/Qbricks/qbricks.github.io">Github</a> du projet</p>
 </div>
 <section id="methode-formelle">
 <h2>Méthode formelle<a class="headerlink" href="#methode-formelle" title="Lien vers cette rubrique">#</a></h2>
-<p>Dans de nombreux domaines critiques (nucléaire, ferroviaire, etc.), il est nécessaire de garantir l’absence de bugs dans les logiciels. Pour cela, les méthodes formelles apparaissent comme des techniques efficaces permettant de raisonner logiquement sur un programme informatique, afin de démontrer la validité de ce dernier par rapport à une spécification.</p>
-</section>
-<section id="exemple-deutsch-jozsa">
-<h2>Exemple : Deutsch-Jozsa<a class="headerlink" href="#exemple-deutsch-jozsa" title="Lien vers cette rubrique">#</a></h2>
-<p>Après avoir téléchargé et installer Qbricks et Why3 selon les <a class="reference external" href="https://github.com/Qbricks/qbricks.github.io/tree/main?tab=readme-ov-file#installation-1">instructions des développeurs</a>, rendez-vous dans le dossier Case_studies et démarrer le fichier “deutsch-jozsa.mlw” avec la commande suivante.</p>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>why3 ide deutsch_jozsa.mlw
+<p>Dans de nombreuses industries critiques (nucléaire, ferroviaire, etc.), il est nécessaire de garantir l’absence de bugs dans les logiciels. Plusieurs méthodes existent telles que la simulation, le test ou bien la vérification d’assertions. Cependant, les méthodes formelles proposent de vérifier sémantiquement le bon déroulé d’un programme, selon un formalisme mathématique. Afin d’utiliser ces méthodes, <a class="reference external" href="https://www.why3.org">Why3</a> est la plateforme graphique de vérification déductive que nous allons utiliser.</p>
+<table class="table" id="example-table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Méthode</p></th>
+<th class="head"><p>Vérification d’assertions</p></th>
+<th class="head"><p>Simulation</p></th>
+<th class="head"><p>Test</p></th>
+<th class="head"><p>Méthode formelle</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Principe</p></td>
+<td><p>Vérifie la validité des assertions pendant l’exécution d’un programme</p></td>
+<td><p>Exécution d’un modèle simplifié pour vérifier le comportement</p></td>
+<td><p>Test de l’algorithme sur tous les cas possibles</p></td>
+<td><p>Vérification de la logique mathématique du programme</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inconvénients</p></td>
+<td><p>Requiert des mesures destructives avec des états fortement superposés</p></td>
+<td><p>Nécessite un ordinateur quantique</p></td>
+<td><p>Ne permet pas de cibler la source de l’erreur</p></td>
+<td><p>RAS (dans ce cas)</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>In fine</em>, la vérification formelle permet une analyse statique (qui ne nécessite pas d’exécution), insensible à l’échelle (ex: nombre de qubits), et respectant un formalisme mathématique défini.</p>
+<section id="hello-proofs">
+<h3>Hello Proofs<a class="headerlink" href="#hello-proofs" title="Lien vers cette rubrique">#</a></h3>
+<p>Nous allons décortiquer l’exemple <a class="reference external" href="https://www.why3.org/doc/starting.html#hello-proofs">Hello Proofs</a> de la documentation Why3. C’est un algorithme basique, équivalent au Hello World. Il est constitué de 3 objectifs distincts que nous allons essayer de prouver.</p>
+<p>Les <code class="docutils literal notranslate"><span class="pre">theory</span></code> sont les ensembles d’objectifs, définitions et preuves.</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>theory HelloProof
 </pre></div>
 </div>
-<p><img alt="why3" src="_images/why3.png" /></p>
+<p>Les <code class="docutils literal notranslate"><span class="pre">goal</span></code> sont les objectifs, ici des assertions comme « prouver que G1 est True », ce ne peut être que vrai ici. L’objectif G2 utilise les injonctions AND <code class="docutils literal notranslate"><span class="pre">/\</span></code>, OR <code class="docutils literal notranslate"><span class="pre">\/</span></code> et l’implication <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> de Why3. Nous verrons plus tard en quoi l’objectif G2 pose problème.</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>goal G1: true
+goal G2: (true -<span class="p">&gt;</span> false) /\ (true \/ false)
+</pre></div>
+</div>
+<p>Après avoir importé <code class="docutils literal notranslate"><span class="pre">Int</span></code> du module <code class="docutils literal notranslate"><span class="pre">int</span></code>, nous allons l’utiliser dans le goal G3, consistant à prouver que le carré d’un nombre entier est toujours non négatif.</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>use int.Int
+goal G3: forall x:int. x * x <span class="p">&gt;</span>= 0
+
+end
+</pre></div>
+</div>
+</section>
+<section id="prover">
+<h3>Prover<a class="headerlink" href="#prover" title="Lien vers cette rubrique">#</a></h3>
+<p>En vérification formelle, on utilise des provers. Ce sont des démonstrateurs de théorème, qui nous permettent de vérifier les assertions proposées dans Why3. Il existe différents provers en fonction du contexte. Leur utilisation peut se combiner sur une même théorie. Ceux utilisé par Qbricks sont <a class="reference external" href="https://github.com/Z3Prover/z3">Z3</a>, <a class="reference external" href="https://cs.nyu.edu/acsys/cvc3/">CVC3</a> et <a class="reference external" href="https://cvc4.github.io/">4</a>, et <a class="reference external" href="https://alt-ergo.ocamlpro.com/">Alt-Ergo</a>, que nous utilisons également pour vérifier Hello Proofs.</p>
+</section>
+<section id="verification">
+<h3>Vérification<a class="headerlink" href="#verification" title="Lien vers cette rubrique">#</a></h3>
+<p><img alt="why3" src="_images/helloproof1.png" /></p>
+<p>Bienvenue sur l'interface Why3 sur notre exemple Hello Proofs, après avoir éxecuté le proveur Alt-Ergo</p>
+<p>Nous pouvons voir que les <em>Status</em> ne sont pas tous validés. La non-validation du goal G2 entraîne la non validation de toute la théorie. En effet, l’implication <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">-&gt;</span> <span class="pre">false</span></code> signifiant « si vrai alors faux » est faux par définition. Nous pouvons le vérifier en séparant le goal en deux assertions grâce à l’outil <em>Split</em> dans l’onglet <em>Tools</em>.</p>
+<p><img alt="why3split" src="_images/helloproof2.png" /></p>
+<p>Nous venons de 'split' le goal G2 en deux assertions à vérifier distinctement</p>
+<p>L’assertion G.2.0 n’est pas vérifié par Why3 après le split, nous sommes donc sûr que c’est la première implication qui est fausse. Nous corrigeons <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">-&gt;</span> <span class="pre">false</span></code> par <code class="docutils literal notranslate"><span class="pre">false</span> <span class="pre">-&gt;</span> <span class="pre">false</span></code>.</p>
+<p><img alt="why3proofcomplete" src="_images/helloproof3.png" /></p>
+<p>Maintenant, toute la théorie HelloProof est vérifiée !</p>
+</section>
+</section>
+<section id="exemple-pile-ou-face-cointoss">
+<h2>Exemple : Pile ou face (Cointoss)<a class="headerlink" href="#exemple-pile-ou-face-cointoss" title="Lien vers cette rubrique">#</a></h2>
+<p>Après avoir téléchargé et installé Qbricks et Why3 selon les <a class="reference external" href="https://github.com/Qbricks/qbricks.github.io/tree/main?tab=readme-ov-file#installation-1">instructions des développeurs</a>, nous créons un nouveau fichier nommé <em>cointoss.mlw</em>.</p>
+<p>Nous allons importer les composants intéressants de Qbricks pour appliquer la porte de Hadamard.</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>module Hadamard
+
+  use wired_circuits.Circuit_c
+  use wired_circuits.Qbricks_prim
+  use int.Int
+  use unit_circle.Angle
+</pre></div>
+</div>
+<p>Ci-dessous, vous pouvez voir les conditions (ensures) pour appliquer la porte de Hadamard.</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>  let circ  (): circuit 
+    ensures {width result = 1} 
+    ensures {range result = 1} 
+</pre></div>
+</div>
+<p>Nous pouvons remarquer que la définition de la porte de Hadamard ne se fait pas selon sa représentation matricielle, mais selon des fonctions de transformation des registres quantiques. La multiplication d’une matrice par un vecteur est remplacée par une décomposition en somme de produits de vecteurs. On représente ainsi les circuits comme des sommes de vecteurs, appelées des sommes de chemins comme ici Hadamard :</p>
+<p><span class="math notranslate nohighlight">\(
+H \left| x \right\rangle \mapsto \frac{1}{\sqrt{2}} \sum_{y \in \mathbb{Z}_2} e^{2 \pi i \frac{xy}{2}} \left| y \right\rangle
+\)</span></p>
+<div class="seealso admonition">
+<p class="admonition-title">Explication</p>
+<p>Vous pouvez retrouver l’explication complète de la somme des chemins dans cet <a class="reference external" href="https://arxiv.org/pdf/1805.06908">article</a></p>
+</div>
+<p>Nous pouvons voir ci-dessous</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>    ensures {forall x y. ang_ind result x y  =  (x 0 * y 0) /./ 1}
+    ensures {forall x y. basis_ket result x y 0 = y 0}
+  =
+    hadamard 
+
+end
+</pre></div>
+</div>
+<p>avec (x 0 * y 0) /./ 1 qui calcule <span class="math notranslate nohighlight">\(\frac{xy}{2}\)</span>, et basis_ket result x y 0 = y 0 la signature de sortie <span class="math notranslate nohighlight">\(\left|y \right\rangle\)</span></p>
+<p>En exécutant le code avec Why3, et en appliquant les provers utilisés par Qbricks, vous pouvez alors vérifier le respect des principes de la physique quantique apportés par Qbricks pour la transformation de Hadamard.</p>
 </section>
 </section>
 
@@ -408,12 +506,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="perceval.html"
+       href="qubo.html"
        title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">précédent</p>
-        <p class="prev-next-title">Perceval</p>
+        <p class="prev-next-title">Etude de cas QUBO</p>
       </div>
     </a>
     <a class="right-next"
@@ -441,8 +539,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methode-formelle">Méthode formelle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-deutsch-jozsa">Exemple : Deutsch-Jozsa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methode-formelle">Méthode formelle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-proofs">Hello Proofs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prover">Prover</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Vérification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-pile-ou-face-cointoss">Exemple : Pile ou face (Cointoss)</a></li>
 </ul>
   </nav></div>
 

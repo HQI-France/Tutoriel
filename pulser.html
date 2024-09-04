@@ -61,7 +61,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pulser';</script>
-    <link rel="canonical" href="https://hqi.fr/pulser.html" />
+    <link rel="canonical" href="https://hqi-france.github.io/pulser.html" />
     <link rel="icon" href="_static/logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="myqlm.html">Qaptiva</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pulser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="perceval.html">Perceval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubo.html">Etude de cas QUBO</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Outils</span></p>
 <ul class="nav bd-sidenav">
@@ -486,6 +487,98 @@ document.write(`
 </div>
 </div>
 <p>On observe que plus la distance entre les atomes est grande, plus l’excitation <span class="math notranslate nohighlight">\(|rr\rangle\)</span> est forte entre les atomes. En effet, le phénomène du blocage de Rydberg empêche un atome d’être excité si un autre atome trop proche est lui-même excité.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pulser</span> <span class="kn">import</span> <span class="n">Pulse</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Register</span>
+<span class="kn">from</span> <span class="nn">pulser.waveforms</span> <span class="kn">import</span> <span class="n">BlackmanWaveform</span>
+<span class="kn">from</span> <span class="nn">pulser.devices</span> <span class="kn">import</span> <span class="n">DigitalAnalogDevice</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qubits</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;control&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">qubits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">DigitalAnalogDevice</span><span class="p">)</span>
+<span class="n">pulse_time</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">declare_variable</span><span class="p">(</span><span class="s2">&quot;pulse_time&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">declare_channel</span><span class="p">(</span><span class="s2">&quot;digital&quot;</span><span class="p">,</span> <span class="s2">&quot;raman_local&quot;</span><span class="p">,</span> <span class="n">initial_target</span><span class="o">=</span><span class="s2">&quot;control&quot;</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">declare_channel</span><span class="p">(</span><span class="s2">&quot;rydberg&quot;</span><span class="p">,</span> <span class="s2">&quot;rydberg_local&quot;</span><span class="p">,</span> <span class="n">initial_target</span><span class="o">=</span><span class="s2">&quot;control&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">half_pi_wf</span> <span class="o">=</span> <span class="n">BlackmanWaveform</span><span class="p">(</span><span class="n">pulse_time</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ry</span> <span class="o">=</span> <span class="n">Pulse</span><span class="o">.</span><span class="n">ConstantDetuning</span><span class="p">(</span><span class="n">amplitude</span><span class="o">=</span><span class="n">half_pi_wf</span><span class="p">,</span> <span class="n">detuning</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">phase</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ry_dag</span> <span class="o">=</span> <span class="n">Pulse</span><span class="o">.</span><span class="n">ConstantDetuning</span><span class="p">(</span>
+    <span class="n">amplitude</span><span class="o">=</span><span class="n">half_pi_wf</span><span class="p">,</span> <span class="n">detuning</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ry</span><span class="p">,</span> <span class="s2">&quot;digital&quot;</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">target</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="s2">&quot;digital&quot;</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ry_dag</span><span class="p">,</span> <span class="s2">&quot;digital&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi_wf</span> <span class="o">=</span> <span class="n">BlackmanWaveform</span><span class="p">(</span><span class="n">pulse_time</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">pi_pulse</span> <span class="o">=</span> <span class="n">Pulse</span><span class="o">.</span><span class="n">ConstantDetuning</span><span class="p">(</span><span class="n">pi_wf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_val</span> <span class="o">=</span> <span class="n">DigitalAnalogDevice</span><span class="o">.</span><span class="n">rabi_from_blockade</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">two_pi_wf</span> <span class="o">=</span> <span class="n">BlackmanWaveform</span><span class="o">.</span><span class="n">from_max_val</span><span class="p">(</span><span class="n">max_val</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">two_pi_pulse</span> <span class="o">=</span> <span class="n">Pulse</span><span class="o">.</span><span class="n">ConstantDetuning</span><span class="p">(</span><span class="n">two_pi_wf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="s2">&quot;digital&quot;</span><span class="p">,</span> <span class="s2">&quot;rydberg&quot;</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pi_pulse</span><span class="p">,</span> <span class="s2">&quot;rydberg&quot;</span><span class="p">)</span>
+<span class="c1">#seq.target(&quot;target&quot;, &quot;rydberg&quot;)</span>
+<span class="c1">#seq.add(two_pi_pulse, &quot;rydberg&quot;)</span>
+<span class="c1">#seq.target(&quot;control&quot;, &quot;rydberg&quot;)</span>
+<span class="c1">#seq.add(pi_pulse, &quot;rydberg&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#seq.align(&quot;digital&quot;, &quot;rydberg&quot;)</span>
+<span class="c1">#seq.add(ry, &quot;digital&quot;)</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="s2">&quot;digital&quot;</span><span class="p">)</span>
+<span class="n">seq1</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">pulse_time</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">seq1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ea3a1835d33f17fb60377561c2d4352f4f4ed79070d98ea03eae48ffedfbce48.png" src="_images/ea3a1835d33f17fb60377561c2d4352f4f4ed79070d98ea03eae48ffedfbce48.png" />
+</div>
+</div>
 </section>
 </section>
 
