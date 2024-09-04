@@ -59,11 +59,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'perceval';</script>
-    <link rel="canonical" href="https://hqi.fr/perceval.html" />
+    <link rel="canonical" href="https://hqi-france.github.io/perceval.html" />
     <link rel="icon" href="_static/logo.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Qbricks" href="qbricks.html" />
+    <link rel="next" title="Etude de cas QUBO" href="qubo.html" />
     <link rel="prev" title="Pulser" href="pulser.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
@@ -188,6 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="myqlm.html">Qaptiva</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pulser.html">Pulser</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Perceval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubo.html">Etude de cas QUBO</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Outils</span></p>
 <ul class="nav bd-sidenav">
@@ -235,6 +236,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/HQI-France/Tutoriel" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Dépôt source"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -319,7 +335,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -335,6 +353,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-state">Bell state</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ralph-cnot">Ralph CNOT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heralded-cnot">Heralded CNOT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klm-cnot">KLM CNOT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaison">Comparaison</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -346,63 +378,407 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="perceval">
 <h1><a class="reference external" href="https://perceval.quandela.net/docs/">Perceval</a><a class="headerlink" href="#perceval" title="Lien vers cette rubrique">#</a></h1>
+<p><a class="reference external" href="https://perceval.quandela.net/docs/algorithms.html">https://perceval.quandela.net/docs/algorithms.html</a></p>
 <p>Perceval est la plateforme logicielle de Quandela, permettant le développement de circuit et algorithme sur ordinateur photonique.</p>
+<section id="bell-state">
+<h2>Bell state<a class="headerlink" href="#bell-state" title="Lien vers cette rubrique">#</a></h2>
+<p>En informatique photonique, le protocole KLM permet de réaliser des portes CNOT. Perceval propose plusieurs méthodes pour réaliser une CNOT. Nous allons ici construire des états de Bell avec différents méthodes et comparer l’amplitude de probabilité sortante.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">perceval</span> <span class="k">as</span> <span class="nn">pcvl</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">perceval.components</span> <span class="kn">import</span> <span class="n">catalog</span>
-<span class="kn">from</span> <span class="nn">perceval.components.source</span> <span class="kn">import</span> <span class="n">Source</span>
-<span class="kn">from</span> <span class="nn">perceval.algorithm</span> <span class="kn">import</span> <span class="n">ProcessTomography</span>
-<span class="kn">from</span> <span class="nn">perceval.algorithm.tomography</span> <span class="kn">import</span> <span class="n">is_physical</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">perceval</span> <span class="k">as</span> <span class="nn">pcvl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">emission_probability</span><span class="o">=</span><span class="mf">0.40</span><span class="p">,</span> <span class="n">multiphoton_component</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Ici, nous utilisons Perceval pour réaliser une opérations cnot sur deux photons. Dans la technologie de l’ordinateur Quandela, la réalisation d’une porte CNOT se fait grâce au protocole KLM.</p>
+<section id="ralph-cnot">
+<h3>Ralph CNOT<a class="headerlink" href="#ralph-cnot" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnot</span> <span class="o">=</span> <span class="n">catalog</span><span class="p">[</span><span class="s2">&quot;klm cnot&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">build_processor</span><span class="p">()</span>
-<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">cnot</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">post</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">catalog</span><span class="p">[</span><span class="s1">&#39;postprocessed cnot&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">build_processor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QPU</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">Processor</span><span class="p">(</span><span class="s2">&quot;SLOS&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+<span class="n">QPU</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">BS</span><span class="o">.</span><span class="n">H</span><span class="p">())</span>
+<span class="n">QPU</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+
+<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">QPU</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b3b21113e9ab99db29c23f20e372956cb3efde6d68668d08301976001465cfca.svg" src="_images/b3b21113e9ab99db29c23f20e372956cb3efde6d68668d08301976001465cfca.svg" /></div>
+<img alt="_images/31a98ea6cf9ebce109c8ba2220e6d8676384efd18e8730d717016f9821058b7f.svg" src="_images/31a98ea6cf9ebce109c8ba2220e6d8676384efd18e8730d717016f9821058b7f.svg" /></div>
 </div>
-<p>Nous pouvons vérifier que le circuit réalise bien les opérations correspondant à une porte CNOT.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span> <span class="s2">&quot;00&quot;</span><span class="p">,</span>
-    <span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-    <span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
-    <span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span> <span class="s2">&quot;11&quot;</span>
-<span class="p">}</span>
-
-<span class="n">ca</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">algorithm</span><span class="o">.</span><span class="n">Analyzer</span><span class="p">(</span><span class="n">cnot</span><span class="p">,</span> <span class="n">states</span><span class="p">)</span>
-<span class="n">ca</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">expected</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;00&quot;</span><span class="p">:</span> <span class="s2">&quot;00&quot;</span><span class="p">,</span> <span class="s2">&quot;01&quot;</span><span class="p">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span><span class="p">})</span>
-<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;performance = </span><span class="si">{</span><span class="n">pcvl</span><span class="o">.</span><span class="n">simple_float</span><span class="p">(</span><span class="n">ca</span><span class="o">.</span><span class="n">performance</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, fidelity = </span><span class="si">{</span><span class="n">ca</span><span class="o">.</span><span class="n">fidelity</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QPU</span><span class="o">.</span><span class="n">with_input</span><span class="p">(</span><span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_post</span><span class="o">=</span><span class="n">QPU</span><span class="o">.</span><span class="n">probs</span><span class="p">()[</span><span class="s2">&quot;results&quot;</span><span class="p">]</span>
+<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">output_post</span><span class="p">,</span> <span class="n">max_v</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
 <thead>
-<tr><th style="text-align: right;">  </th><th style="text-align: right;">  00</th><th style="text-align: right;">  01</th><th style="text-align: right;">  10</th><th style="text-align: right;">  11</th></tr>
+<tr><th>state    </th><th style="text-align: right;">  probability</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align: right;">00</td><td style="text-align: right;">   1</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td></tr>
-<tr><td style="text-align: right;">01</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td></tr>
-<tr><td style="text-align: right;">10</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td></tr>
-<tr><td style="text-align: right;">11</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">   0</td></tr>
+<tr><td>|1,0,1,0&gt;</td><td style="text-align: right;">     0.495518</td></tr>
+<tr><td>|0,1,0,1&gt;</td><td style="text-align: right;">     0.495518</td></tr>
+<tr><td>|0,1,1,0&gt;</td><td style="text-align: right;">     0.00747 </td></tr>
+<tr><td>|1,0,0,1&gt;</td><td style="text-align: right;">     0.001494</td></tr>
 </tbody>
-</table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>performance = 0.051321, fidelity = (100+0j)%
+</table></div></div>
+</div>
+</section>
+<section id="heralded-cnot">
+<h3>Heralded CNOT<a class="headerlink" href="#heralded-cnot" title="Lien vers cette rubrique">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heralder</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">catalog</span><span class="p">[</span><span class="s1">&#39;heralded cnot&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">build_processor</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QPU</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">Processor</span><span class="p">(</span><span class="s2">&quot;SLOS&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+<span class="n">QPU</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">BS</span><span class="o">.</span><span class="n">H</span><span class="p">())</span>
+<span class="n">QPU</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">heralder</span><span class="p">)</span>
+
+<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">QPU</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/29652221fecec3916ea7e2b774a727305a9687c1057bc8f115267ce0b78e7133.svg" src="_images/29652221fecec3916ea7e2b774a727305a9687c1057bc8f115267ce0b78e7133.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QPU</span><span class="o">.</span><span class="n">with_input</span><span class="p">(</span><span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_heralder</span><span class="o">=</span><span class="n">QPU</span><span class="o">.</span><span class="n">probs</span><span class="p">()[</span><span class="s2">&quot;results&quot;</span><span class="p">]</span>
+<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">output_heralder</span><span class="p">,</span> <span class="n">max_v</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr><th>state    </th><th style="text-align: right;">  probability</th></tr>
+</thead>
+<tbody>
+<tr><td>|0,1,0,1&gt;</td><td style="text-align: right;">     0.478995</td></tr>
+<tr><td>|1,0,1,0&gt;</td><td style="text-align: right;">     0.475693</td></tr>
+<tr><td>|1,1,0,0&gt;</td><td style="text-align: right;">     0.006645</td></tr>
+<tr><td>|1,0,0,1&gt;</td><td style="text-align: right;">     0.006644</td></tr>
+<tr><td>|0,1,1,0&gt;</td><td style="text-align: right;">     0.004687</td></tr>
+<tr><td>|0,0,1,1&gt;</td><td style="text-align: right;">     0.004687</td></tr>
+<tr><td>|0,2,0,0&gt;</td><td style="text-align: right;">     0.004034</td></tr>
+<tr><td>|0,0,0,2&gt;</td><td style="text-align: right;">     0.004032</td></tr>
+<tr><td>|0,0,2,0&gt;</td><td style="text-align: right;">     0.003725</td></tr>
+<tr><td>|2,0,0,0&gt;</td><td style="text-align: right;">     0.00178 </td></tr>
+</tbody>
+</table></div></div>
+</div>
+</section>
+<section id="klm-cnot">
+<h3>KLM CNOT<a class="headerlink" href="#klm-cnot" title="Lien vers cette rubrique">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">klm</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">catalog</span><span class="p">[</span><span class="s1">&#39;klm cnot&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">build_processor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QPU</span> <span class="o">=</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">Processor</span><span class="p">(</span><span class="s2">&quot;SLOS&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+<span class="n">QPU</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pcvl</span><span class="o">.</span><span class="n">BS</span><span class="o">.</span><span class="n">H</span><span class="p">())</span>
+<span class="n">QPU</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">klm</span><span class="p">)</span>
+
+<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">QPU</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/80ea2f9609b437922c8978f276c5618de31c2b5d02ef803bbdd1d2650b57c2b9.svg" src="_images/80ea2f9609b437922c8978f276c5618de31c2b5d02ef803bbdd1d2650b57c2b9.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">QPU</span><span class="o">.</span><span class="n">with_input</span><span class="p">(</span><span class="n">pcvl</span><span class="o">.</span><span class="n">BasicState</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_klm</span><span class="o">=</span><span class="n">QPU</span><span class="o">.</span><span class="n">probs</span><span class="p">()[</span><span class="s2">&quot;results&quot;</span><span class="p">]</span>
+<span class="n">pcvl</span><span class="o">.</span><span class="n">pdisplay</span><span class="p">(</span><span class="n">output_klm</span><span class="p">,</span> <span class="n">max_v</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead>
+<tr><th>state    </th><th style="text-align: right;">  probability</th></tr>
+</thead>
+<tbody>
+<tr><td>|1,0,1,0&gt;</td><td style="text-align: right;">     0.477572</td></tr>
+<tr><td>|0,1,0,1&gt;</td><td style="text-align: right;">     0.47747 </td></tr>
+<tr><td>|1,1,0,0&gt;</td><td style="text-align: right;">     0.007514</td></tr>
+<tr><td>|1,0,0,1&gt;</td><td style="text-align: right;">     0.005569</td></tr>
+<tr><td>|0,0,0,2&gt;</td><td style="text-align: right;">     0.005508</td></tr>
+<tr><td>|0,0,1,1&gt;</td><td style="text-align: right;">     0.004554</td></tr>
+<tr><td>|0,2,0,0&gt;</td><td style="text-align: right;">     0.004019</td></tr>
+<tr><td>|0,1,1,0&gt;</td><td style="text-align: right;">     0.003715</td></tr>
+<tr><td>|0,0,2,0&gt;</td><td style="text-align: right;">     0.003406</td></tr>
+<tr><td>|2,0,0,0&gt;</td><td style="text-align: right;">     0.001935</td></tr>
+</tbody>
+</table></div></div>
+</div>
+</section>
+<section id="comparaison">
+<h3>Comparaison<a class="headerlink" href="#comparaison" title="Lien vers cette rubrique">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">output_post</span><span class="p">,</span> <span class="n">output_heralder</span><span class="p">,</span> <span class="n">output_klm</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;heralder&#39;</span><span class="p">,</span> <span class="s1">&#39;klm&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># transform nan to 0</span>
+<span class="n">compare</span> <span class="o">=</span> <span class="n">compare</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># plot only the first 2 elements</span>
+<span class="n">compare</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/33150d59526e3b8d9657671a0c031eafb04c5951ec9efb1c4403459f14bbd669.png" src="_images/33150d59526e3b8d9657671a0c031eafb04c5951ec9efb1c4403459f14bbd669.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compare</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>post</th>
+      <th>heralder</th>
+      <th>klm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(1, 0, 1, 0)</th>
+      <td>0.495518</td>
+      <td>0.475693</td>
+      <td>0.477572</td>
+    </tr>
+    <tr>
+      <th>(0, 1, 0, 1)</th>
+      <td>0.495518</td>
+      <td>0.478995</td>
+      <td>0.477470</td>
+    </tr>
+    <tr>
+      <th>(0, 1, 1, 0)</th>
+      <td>0.007470</td>
+      <td>0.004687</td>
+      <td>0.003715</td>
+    </tr>
+    <tr>
+      <th>(1, 0, 0, 1)</th>
+      <td>0.001494</td>
+      <td>0.006644</td>
+      <td>0.005569</td>
+    </tr>
+    <tr>
+      <th>(1, 1, 0, 0)</th>
+      <td>0.000000</td>
+      <td>0.006645</td>
+      <td>0.007514</td>
+    </tr>
+    <tr>
+      <th>(0, 2, 0, 0)</th>
+      <td>0.000000</td>
+      <td>0.004034</td>
+      <td>0.004019</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 2, 0)</th>
+      <td>0.000000</td>
+      <td>0.003725</td>
+      <td>0.003406</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 1, 1)</th>
+      <td>0.000000</td>
+      <td>0.004687</td>
+      <td>0.004554</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 0, 2)</th>
+      <td>0.000000</td>
+      <td>0.004032</td>
+      <td>0.005508</td>
+    </tr>
+    <tr>
+      <th>(2, 0, 0, 0)</th>
+      <td>0.000000</td>
+      <td>0.001780</td>
+      <td>0.001935</td>
+    </tr>
+    <tr>
+      <th>(1, 2, 0, 0)</th>
+      <td>0.000000</td>
+      <td>0.000418</td>
+      <td>0.000754</td>
+    </tr>
+    <tr>
+      <th>(1, 1, 1, 0)</th>
+      <td>0.000000</td>
+      <td>0.000876</td>
+      <td>0.000768</td>
+    </tr>
+    <tr>
+      <th>(1, 1, 0, 1)</th>
+      <td>0.000000</td>
+      <td>0.001632</td>
+      <td>0.001229</td>
+    </tr>
+    <tr>
+      <th>(1, 0, 2, 0)</th>
+      <td>0.000000</td>
+      <td>0.001106</td>
+      <td>0.000990</td>
+    </tr>
+    <tr>
+      <th>(1, 0, 1, 1)</th>
+      <td>0.000000</td>
+      <td>0.000877</td>
+      <td>0.000819</td>
+    </tr>
+    <tr>
+      <th>(1, 0, 0, 2)</th>
+      <td>0.000000</td>
+      <td>0.000417</td>
+      <td>0.000188</td>
+    </tr>
+    <tr>
+      <th>(0, 3, 0, 0)</th>
+      <td>0.000000</td>
+      <td>0.000128</td>
+      <td>0.000388</td>
+    </tr>
+    <tr>
+      <th>(0, 2, 0, 1)</th>
+      <td>0.000000</td>
+      <td>0.000981</td>
+      <td>0.000768</td>
+    </tr>
+    <tr>
+      <th>(0, 1, 2, 0)</th>
+      <td>0.000000</td>
+      <td>0.000116</td>
+      <td>0.000108</td>
+    </tr>
+    <tr>
+      <th>(0, 1, 0, 2)</th>
+      <td>0.000000</td>
+      <td>0.000981</td>
+      <td>0.000754</td>
+    </tr>
+    <tr>
+      <th>(0, 1, 1, 1)</th>
+      <td>0.000000</td>
+      <td>0.000503</td>
+      <td>0.000360</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 3, 0)</th>
+      <td>0.000000</td>
+      <td>0.000210</td>
+      <td>0.000097</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 2, 1)</th>
+      <td>0.000000</td>
+      <td>0.000116</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 0, 3)</th>
+      <td>0.000000</td>
+      <td>0.000128</td>
+      <td>0.000565</td>
+    </tr>
+    <tr>
+      <th>(0, 2, 1, 0)</th>
+      <td>0.000000</td>
+      <td>0.000058</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>(0, 0, 1, 2)</th>
+      <td>0.000000</td>
+      <td>0.000058</td>
+      <td>0.000474</td>
+    </tr>
+    <tr>
+      <th>(2, 0, 1, 0)</th>
+      <td>0.000000</td>
+      <td>0.000474</td>
+      <td>0.000475</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>On observe une plus grande amplitude de probabilité pour la porte heradled et KLM que pour Ralph. Meilleure précision pour Ralph</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -445,11 +821,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="qbricks.html"
+       href="qubo.html"
        title="page suivante">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Qbricks</p>
+        <p class="prev-next-title">Etude de cas QUBO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -460,7 +836,26 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-state">Bell state</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ralph-cnot">Ralph CNOT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heralded-cnot">Heralded CNOT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klm-cnot">KLM CNOT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaison">Comparaison</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
