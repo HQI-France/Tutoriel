@@ -26,8 +26,9 @@ To publish online, use ghp-import
 ```batch
 ghp-import -n -p -f _build/html
 ```
+For more tools, please refer to the [Jupyter-Book](https://jupyterbook.org/en/stable/intro.html) documentation.
 
-# How to contribute
+# Who can contribute ?
 
 If you are a part of the program, you can freely modify pages, add tutorial, create your own page or the page of your project.
 
