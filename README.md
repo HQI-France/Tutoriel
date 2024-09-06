@@ -4,6 +4,7 @@ Please access the page [here](https://hqi-france.github.io/Tutoriel/)
 
 ## The pages are generated using jupyter-book and Github pages
 
+### Edit pages
 To update the page, first install [Jupyter-Book](https://pypi.org/project/jupyter-book/) and [GitHub Pages Import](https://pypi.org/project/ghp-import/).
 
 Then clone the repository localy, you can modify files.
@@ -26,6 +27,11 @@ To publish online, use ghp-import
 ```batch
 ghp-import -n -p -f _build/html
 ```
+#### Add pages
+
+To add a new pages, create a new files in ./docs, add your content.
+Then, modify the _toc.yml to add the new file in the Table Of Content.
+
 For more tools, please refer to the [Jupyter-Book](https://jupyterbook.org/en/stable/intro.html) documentation.
 
 # Who can contribute ?
