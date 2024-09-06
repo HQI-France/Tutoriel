@@ -20,17 +20,29 @@ jb build --all ./docs
 ```
 for deep modification (yaml file, new pages...)
 
-Look at the result by opening one of the pages and navigate in ./docs/_build/html
+Look at the result by opening one of the pages and navigate in ./docs/_build/html and push your new version on a new branch
 
 To publish online, use ghp-import
 
 ```batch
 ghp-import -n -p -f _build/html
 ```
-#### Add pages
+### Add pages
 
 To add a new pages, create a new files in ./docs, add your content.
 Then, modify the _toc.yml to add the new file in the Table Of Content.
+
+Don't forget to buil all 
+
+```batch
+jb build --all ./docs
+```
+
+then push on a new branch, and publish online with ghp-import
+
+```batch
+ghp-import -n -p -f _build/html
+```
 
 For more tools, please refer to the [Jupyter-Book](https://jupyterbook.org/en/stable/intro.html) documentation.
 
