@@ -2,7 +2,7 @@
 
 Please access the page [here](https://hqi-france.github.io/Tutoriel/)
 
-# The pages are generated using jupyter-book and Github pages
+## The pages are generated using jupyter-book and Github pages
 
 To update the page, first install [Jupyter-Book](https://pypi.org/project/jupyter-book/) and [GitHub Pages Import](https://pypi.org/project/ghp-import/).
 
