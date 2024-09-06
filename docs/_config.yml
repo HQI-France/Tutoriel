@@ -14,7 +14,7 @@ repository:
  
 
 html:
-  use_repository_button: True
+  use_repository_button: False
   use_issues_button: False
   home_page_in_navbar: True
   #announcement: '⚠️Cette documentation est encore en cours de construction⚠️' Possibilité de mettre une annonce
